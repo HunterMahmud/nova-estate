@@ -28,7 +28,7 @@ const Register = () => {
   // console.log(errors);
   return (
     <div>
-      <div className="w-full max-w-md mx-auto mt-12 p-8 space-y-3 rounded-xl bg-gray-900 text-gray-100">
+      <div data-aos="zoom-in" className="w-full max-w-md mx-auto mt-12 p-8 space-y-3 rounded-xl bg-gray-900 text-gray-100">
         <h1 className="text-2xl font-bold text-center">Register Now!</h1>
         <form onSubmit={handleSubmit(onSubmitRegister)} className="space-y-6">
           <div className="space-y-1 text-sm">
