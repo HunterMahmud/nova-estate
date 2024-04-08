@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBojL5HVzeTzEgCxa8mHpoPaVb5u1Wy0aI",
-  authDomain: "nova-estate.firebaseapp.com",
-  projectId: "nova-estate",
-  storageBucket: "nova-estate.appspot.com",
-  messagingSenderId: "338977290437",
-  appId: "1:338977290437:web:cc16c083bdd78867fc18ac"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID
 };
 
 // Initialize Firebase

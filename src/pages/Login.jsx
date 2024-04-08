@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import contextProvider from "../components/contextProvider";
 import 'animate.css';
+import { toast } from 'react-toastify';
 
 
 const Login = () => {
@@ -12,39 +13,50 @@ const Login = () => {
   } = useForm();
 
   const {emailPasswordLogIn, googleLogin, githubLogin } = contextProvider();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const onSubmitLogin = (data) => {
     console.log(data);
     const {email, password} = data;
     emailPasswordLogIn(email, password)
     .then(res=>{
-      console.log(res.user);
+      // console.log(res.user);
+      toast.success('Login success.');
+      navigate(location?.state || '/')
     })
     .catch(err=>{
-      console.log(err);
+      // console.log(err);
+      toast.error('Login failed. Invalid credentials')
     })
   };
   const handleLoginWithGoogle = ()=>{
     googleLogin()
     .then(res=> {
-      console.log(res.user);
+      // console.log(res.user);
+      toast.success('Login success.')
+      navigate(location?.state || '/')
     })
     .catch(err=> {
-      console.log(err);
+      // console.log(err);
+      toast.error('Login failed. Invalid credentials')
     })
   }
   const handleLoginWithGithub= ()=>{
     githubLogin()
     .then(res=> {
-      console.log(res.user);
+      toast.success('Login success.')
+      // console.log(res.user);
+      navigate(location?.state || '/')
     })
     .catch(err=> {
-      console.log(err);
+      // console.log(err); 
+      toast.error('Login failed. Invalid credentials')
     })
   }
   return (
     <div>
-      <div data-aos="zoom-in" className="w-full max-w-md mx-auto mt-12 p-8 space-y-3 rounded-xl bg-gray-900 text-gray-100">
+      <div data-aos="zoom-in" className="w-full mb-9 max-w-md mx-auto mt-12 p-8 space-y-3 rounded-xl bg-gray-900 text-gray-100">
         <h1 className="text-2xl font-bold text-center ">Login</h1>
         <form onSubmit={handleSubmit(onSubmitLogin)} className="space-y-6">
           <div className="space-y-1 text-sm">
@@ -76,29 +88,6 @@ const Login = () => {
               required:{
                 value:true,
                 message: "This field is required."
-              },
-              minLength:{
-                value:6,
-                message: "Password must be at least 6 characters."
-              },
-              validate:{
-                oneLower:(value)=>{
-                  if(/^(?=.*[a-z])/.test(value)){
-                    return true;
-                  }
-                  return "Password must include a lowercase character."
-                },
-                oneUpper:(value)=>{
-                  if(/^(?=.*[A-Z])/.test(value)){
-                    return true;
-                  }
-                  return "Password must include a uppercase character."
-                }
-              },
-              
-              maxLength:{
-                value:10,
-                message: "Password must be at most 12 characters."
               }
             })}
               type="password"

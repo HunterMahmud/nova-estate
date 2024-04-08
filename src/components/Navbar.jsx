@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import contextProvider from "./contextProvider";
+import { toast } from 'react-toastify';
 
 const Navbar = () => {
   const { user, logOut } = contextProvider();
@@ -25,10 +26,12 @@ const Navbar = () => {
   const handleLogOut = () => {
     logOut()
       .then(() => {
-        console.log("logout");
+        toast.success('Logged out...')
+
       })
       .catch((err) => {
         console.log(err);
+        toast.error('Logout error happened')
       });
   };
   return (

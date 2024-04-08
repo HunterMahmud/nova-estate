@@ -2,33 +2,48 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import contextProvider from "../components/contextProvider";
 import { updateProfile } from "firebase/auth";
+import { toast } from "react-toastify";
 
 const Register = () => {
-  const {emailPasswordRegister}= contextProvider();
+  const { emailPasswordRegister } = contextProvider();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
   const onSubmitRegister = (data) => {
-    const {email, password, photoURL, name} = data;
+    const { email, password, photoURL, name } = data;
     emailPasswordRegister(email, password)
-    .then(res=> {
-      updateProfile(res.user, {
-        displayName: name, photoURL: photoURL
-      }).then(() => {
-       console.log(res.user);
-
-      }).catch((error) => {
-        console.log('and error occured');
+      .then((res) => {
+        updateProfile(res.user, {
+          displayName: name,
+          photoURL: photoURL,
+        })
+          .then(() => {
+            console.log(res.user);
+            toast.success("Register successful.");
+          })
+          .catch((error) => {
+            toast.error("Error happened updating info");
+          });
+      })
+      .catch((err) => {
+       
+        if (err?.customData?._tokenResponse?.error?.message == 'EMAIL_EXISTS') {
+          toast.error("Email already exists.");
+        }
+        else{
+          toast.error("Register unsuccessful.")
+        }
       });
-    })
-    .catch(err=>console.log(err))
   };
-  // console.log(errors);
+  
   return (
     <div>
-      <div data-aos="zoom-in" className="w-full max-w-md mx-auto mt-12 p-8 space-y-3 rounded-xl bg-gray-900 text-gray-100">
+      <div
+        data-aos="zoom-in"
+        className="w-full mb-9 max-w-md mx-auto mt-12 p-8 space-y-3 rounded-xl bg-gray-900 text-gray-100"
+      >
         <h1 className="text-2xl font-bold text-center">Register Now!</h1>
         <form onSubmit={handleSubmit(onSubmitRegister)} className="space-y-6">
           <div className="space-y-1 text-sm">

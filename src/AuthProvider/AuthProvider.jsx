@@ -6,6 +6,9 @@ import { createContext } from "react";
 import auth from './../Firebase/firebase.config';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
+import { ToastContainer, toast } from 'react-toastify';
+
+  import 'react-toastify/dist/ReactToastify.css';
 
 
 export const AuthContext = createContext(null);
@@ -78,7 +81,7 @@ const logOut = ()=> {
   };
   return (
     <div>
-      <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
+      <AuthContext.Provider value={authInfo}>{children}  <ToastContainer /> </AuthContext.Provider>
     </div>
   );
 };
