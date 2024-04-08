@@ -1,20 +1,36 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import contextProvider from "./contextProvider";
 
 const Navbar = () => {
+  const { user, logOut } = contextProvider();
   const links = (
     <>
       <li>
         <NavLink to="/">Home</NavLink>
       </li>
-      <li>
-        <NavLink to="/login">Login</NavLink>
-      </li>
-      <li>
-        <NavLink to="/register">Register</NavLink>
-      </li>
+      {user ? (
+        <li>
+          <NavLink to="/updateprofile">Update Profile</NavLink>
+        </li>
+      ) : (
+        <>
+          <li>
+            <NavLink to="/register">Register</NavLink>
+          </li>
+        </>
+      )}
     </>
   );
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        console.log("logout");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -42,17 +58,33 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <Link to='/' className="btn btn-ghost text-xl">Nova Estate</Link>
+        <Link to="/" className="btn btn-ghost text-xl">
+          Nova Estate
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-       <div className="flex gap-3">
-        <button className="btn-primary">one</button>
-        <button className="btn-primary">one</button>
-
-       </div>
+        <div className="flex gap-3">
+          {user ? (
+            <>
+              <img
+                alt={user?.displayName ? user.displayName : 'Name not found'}
+                title={user?.displayName ? user.displayName : 'Name not set'}
+                className="w-12 h-12 rounded-full ring-2 ring-offset-4 dark:bg-gray-500 dark:ring-violet-600 dark:ring-offset-gray-100"
+                src={user?.photoURL ? user.photoURL : 'https://i.ibb.co/tJTV83n/user-image-not-found.jpg'}
+              />
+              <button onClick={handleLogOut} className="btn btn-secondary">
+                Logout
+              </button>
+            </>
+          ) : (
+            <Link to="/login">
+              <button className="btn btn-primary">Login</button>
+            </Link>
+          )}
+        </div>
       </div>
     </div>
   );

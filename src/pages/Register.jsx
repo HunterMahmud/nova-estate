@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import contextProvider from "./contextProvider";
+import contextProvider from "../components/contextProvider";
 import { updateProfile } from "firebase/auth";
 
 const Register = () => {
