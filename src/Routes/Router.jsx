@@ -7,7 +7,7 @@ import Login from './../pages/Login';
 import Register from './../pages/Register';
 import NonProtectRedirectRoute from '../components/NonProtectRedirectRoute';
 import EstatePage from '../pages/EstatePage';
-import EstateDetails from './../components/EstateDetails';
+import EstateDetails from '../pages/EstateDetails';
 
 const router = createBrowserRouter([
     {
