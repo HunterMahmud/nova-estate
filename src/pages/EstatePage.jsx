@@ -1,13 +1,12 @@
-import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import EstateSection from '../components/EstateSection';
 
 const EstatePage = () => {
-    const data = useLoaderData()
-    console.log(data);
+    const homes = useLoaderData();
+    console.log(homes);
     return (
         <div>
-            <EstateSection data={data}></EstateSection>
+            <EstateSection homes={homes}></EstateSection>
         </div>
     );
 };

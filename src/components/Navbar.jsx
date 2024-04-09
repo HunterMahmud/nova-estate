@@ -2,28 +2,28 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import contextProvider from "./contextProvider";
 import { toast } from 'react-toastify';
-
+import './Navbar.css'
 const Navbar = () => {
   const { user, logOut } = contextProvider();
   const links = (
     <>
       <li>
-        <NavLink to="/">Home</NavLink>
+        <NavLink className='text-lg' to="/">Home</NavLink>
       </li>
       <li>
-        <NavLink to="/estates">Estates</NavLink>
+        <NavLink className='text-lg' to="/estates">Estates</NavLink>
       </li>
       {user ? (
         <li>
-          <NavLink to="/updateprofile">Update Profile</NavLink>
+          <NavLink className='text-lg' to="/updateprofile">Update Profile</NavLink>
         </li>
       ) : (
         <>
           <li>
-            <NavLink to="/register">Register</NavLink>
+            <NavLink className='text-lg' to="/register">Register</NavLink>
           </li>
           <li>
-            <NavLink to="/login">Login</NavLink>
+            <NavLink className='text-lg' to="/login">Login</NavLink>
           </li>
         </>
       )}
@@ -41,7 +41,8 @@ const Navbar = () => {
       });
   };
   return (
-    <div className="navbar bg-base-100">
+    <div className="bg-base-100">
+      <div className="navbar sm:w-[97%] sm:mx-auto">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -62,12 +63,12 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 "
+            className="menu menu-sm dropdown-content mt-3 z-20 p-2 shadow bg-base-100 rounded-box w-52 "
           >
             {links}
           </ul>
         </div>
-        <Link to="/" className="btn btn-ghost text-xl">
+        <Link to="/" className="btn btn-ghost text-xl md:text-2xl lg:text-3xl hover:bg-violet-500  text-white -ml-3 md:ml-3 px-1 md:px-3">
           Nova Estate
         </Link>
       </div>
@@ -90,10 +91,11 @@ const Navbar = () => {
             </>
           ) : (
             <Link to="/login">
-              <button className="btn btn-primary">Login</button>
+              <button className="btn btn-primary bg-violet-700 text-xl text-white font-poppins">Login</button>
             </Link>
           )}
         </div>
+      </div>
       </div>
     </div>
   );

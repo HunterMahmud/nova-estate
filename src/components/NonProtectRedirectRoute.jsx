@@ -8,6 +8,7 @@ const NonProtectRedirectRoute = ({children}) => {
     const location = useLocation();
     const navigate = useNavigate();
     const {user} = contextProvider();
+
     if(!user)  {
        return children;
     }

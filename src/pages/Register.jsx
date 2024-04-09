@@ -42,7 +42,7 @@ const Register = () => {
     <div>
       <div
         data-aos="zoom-in"
-        className="w-full mb-9 max-w-md mx-auto mt-12 p-8 space-y-3 rounded-xl bg-gray-900 text-gray-100"
+        className="w-full mb-9 border border-gray-100/25 max-w-md mx-auto mt-12 p-8 space-y-3 rounded-xl bg-main text-gray-100"
       >
         <h1 className="text-2xl font-bold text-center">Register Now!</h1>
         <form onSubmit={handleSubmit(onSubmitRegister)} className="space-y-6">
@@ -60,7 +60,7 @@ const Register = () => {
               type="text"
               name="name"
               placeholder="Name"
-              className="w-full px-4 py-3 rounded-md border-2 border-gray-500 bg-gray-900 text-gray-100 focus:border-violet-400"
+              className="w-full px-4 py-3 rounded-md border-2 border-gray-500 bg-main text-gray-100 focus:border-violet-400"
             />
             {errors?.name?.message && (
               <span className="text-red-500">{errors.name.message}</span>
@@ -84,7 +84,7 @@ const Register = () => {
               type="text"
               name="photoURL"
               placeholder="Photo URL"
-              className="w-full px-4 py-3 rounded-md border-2 border-gray-500 bg-gray-900 text-gray-100 focus:border-violet-400"
+              className="w-full px-4 py-3 rounded-md border-2 border-gray-500 bg-main text-gray-100 focus:border-violet-400"
             />
             {errors?.photoURL?.message && (
               <span className="text-red-500">{errors.photoURL.message}</span>
@@ -104,7 +104,7 @@ const Register = () => {
               type="email"
               name="email"
               placeholder="Email"
-              className="w-full px-4 py-3 rounded-md border-2 border-gray-500 bg-gray-900 text-gray-100 focus:border-violet-400"
+              className="w-full px-4 py-3 rounded-md border-2 border-gray-500 bg-main text-gray-100 focus:border-violet-400"
             />
             {errors?.email?.message && (
               <span className="text-red-500">{errors.email.message}</span>
@@ -147,13 +147,13 @@ const Register = () => {
               type="password"
               name="password"
               placeholder="Password"
-              className="w-full px-4 py-3 rounded-md border-2 border-gray-500 bg-gray-900 text-gray-100 focus:border-violet-400"
+              className="w-full px-4 py-3 rounded-md border-2 border-gray-500 bg-main text-gray-100 focus:border-violet-400"
             />
             {errors?.password?.message && (
               <span className="text-red-500">{errors.password.message}</span>
             )}
           </div>
-          <button className="block w-full p-3 text-center rounded-sm text-gray-900 bg-violet-400">
+          <button className="block w-full p-3 text-center rounded-sm text-black  bg-violet-500">
             Register
           </button>
         </form>

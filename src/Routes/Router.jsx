@@ -7,6 +7,7 @@ import Login from './../pages/Login';
 import Register from './../pages/Register';
 import NonProtectRedirectRoute from '../components/NonProtectRedirectRoute';
 import EstatePage from '../pages/EstatePage';
+import EstateDetails from './../components/EstateDetails';
 
 const router = createBrowserRouter([
     {
@@ -30,6 +31,11 @@ const router = createBrowserRouter([
                 path:'/estates',
                 loader: ()=> fetch('/estateData.json'),
                 element: <EstatePage></EstatePage>
+            },
+            {
+                path:'/estates/:id',
+                loader: ()=> fetch('/estateData.json'),
+                element: <EstateDetails></EstateDetails>
             },
             {
                 path:'/updateprofile',

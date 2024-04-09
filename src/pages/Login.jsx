@@ -56,11 +56,11 @@ const Login = () => {
   }
   return (
     <div>
-      <div data-aos="zoom-in" className="w-full mb-9 max-w-md mx-auto mt-12 p-8 space-y-3 rounded-xl bg-gray-900 text-gray-100">
+      <div data-aos="zoom-in" className="w-full mb-9 max-w-md mx-auto mt-12 p-8 space-y-3 rounded-xl border border-gray-100/25 bg-main text-gray-100 shadow-lg">
         <h1 className="text-2xl font-bold text-center ">Login</h1>
         <form onSubmit={handleSubmit(onSubmitLogin)} className="space-y-6">
           <div className="space-y-1 text-sm">
-            <label htmlFor="username" className="block text-gray-400">
+            <label htmlFor="email" className="block text-gray-400">
               Email
             </label>
             <input
@@ -73,7 +73,7 @@ const Login = () => {
               type="email"
               name="email"
               placeholder="Email"
-              className="w-full px-4 py-3 rounded-md border-2 border-gray-500 bg-gray-900 text-gray-100 focus:border-violet-400"
+              className="w-full px-4 py-3 rounded-md border-2 border-gray-500 bg-main text-gray-100 focus:border-violet-400"
             />
             {errors?.email?.message && (
               <span className="text-red-500">{errors.email.message}</span>
@@ -94,7 +94,7 @@ const Login = () => {
               name="password"
               id="password"
               placeholder="Password"
-              className="w-full px-4 py-3 rounded-md border-2 border-gray-500 bg-gray-900 text-gray-100 focus:border-violet-400"
+              className="w-full px-4 py-3 rounded-md border-2 border-gray-500 bg-main text-gray-100 focus:border-violet-400"
             />
             {
             errors?.password?.message && <span className="text-red-500">{errors.password.message}</span>
@@ -103,8 +103,8 @@ const Login = () => {
               <Link className="underline">Forgot Password?</Link>
             </div>
           </div>
-          <button className="block w-full p-3 text-center rounded-sm text-gray-900 bg-violet-400">
-            Sign in
+          <button className="block w-full p-3 text-center rounded-sm text-black bg-violet-500">
+            Login
           </button>
         </form>
         <div className="flex items-center pt-4 space-x-1">

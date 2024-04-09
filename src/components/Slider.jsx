@@ -9,19 +9,20 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Pagination, Navigation } from "swiper/modules";
+import { Link } from 'react-router-dom';
 
 
 const Slider = () => {
   return (
     <div className="relative">
-      <div className="absolute top-1/3 left-20 w-[70%]  z-10">
-        <div className=" h-[40%]  max-w-[900px] text-white p-5">
+      <div className="absolute top-1/3 left-12 md:left-20 w-[70%]  z-10">
+        <div className=" h-[40%] max-w-[900px] text-white p-5">
           <h1 className="text-2xl md:text-5xl uppercase font-poppins ">
             Real Estate Residential services {'&'} promotions{" "}
           </h1>
           <div className="flex items-center gap-3">
             <span className="text-[50px] ">&rarr;</span>
-            <button className="uppercase mt-2">explore more</button>
+            <Link to='/estates' className="uppercase mt-2 p-2 border border-blue-500 rounded-md">explore more</Link>
           </div>
         </div>
       </div>

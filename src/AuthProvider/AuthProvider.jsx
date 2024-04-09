@@ -6,9 +6,9 @@ import { createContext } from "react";
 import auth from './../Firebase/firebase.config';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 
-  import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export const AuthContext = createContext(null);
@@ -41,7 +41,7 @@ AOS.init({
 });
 
 const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState(null);
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
   const emailPasswordRegister = (email, password) => {
@@ -64,8 +64,10 @@ const logOut = ()=> {
       if (currentUser) {
         // console.log(currentUser);
         setUser(currentUser);
+       
       }
       else{
+       
         setUser(null);
       }
     });
