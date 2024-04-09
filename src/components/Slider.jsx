@@ -17,7 +17,7 @@ const Slider = () => {
       <div className="absolute top-1/3 left-20 w-[70%]  z-10">
         <div className=" h-[40%]  max-w-[900px] text-white p-5">
           <h1 className="text-2xl md:text-5xl uppercase font-poppins ">
-            Real Estate Residential services & promotions{" "}
+            Real Estate Residential services {'&'} promotions{" "}
           </h1>
           <div className="flex items-center gap-3">
             <span className="text-[50px] ">&rarr;</span>

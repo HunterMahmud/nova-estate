@@ -10,6 +10,9 @@ const Navbar = () => {
       <li>
         <NavLink to="/">Home</NavLink>
       </li>
+      <li>
+        <NavLink to="/estates">Estates</NavLink>
+      </li>
       {user ? (
         <li>
           <NavLink to="/updateprofile">Update Profile</NavLink>
@@ -19,6 +22,9 @@ const Navbar = () => {
           <li>
             <NavLink to="/register">Register</NavLink>
           </li>
+          <li>
+            <NavLink to="/login">Login</NavLink>
+          </li>
         </>
       )}
     </>
@@ -26,12 +32,12 @@ const Navbar = () => {
   const handleLogOut = () => {
     logOut()
       .then(() => {
-        toast.success('Logged out...')
+        toast.success('Logged out.')
 
       })
       .catch((err) => {
         console.log(err);
-        toast.error('Logout error happened')
+        toast.error('Logout error happened.')
       });
   };
   return (
@@ -56,7 +62,7 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 "
           >
             {links}
           </ul>
@@ -66,7 +72,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{links}</ul>
+        <ul className="menu menu-horizontal px-1 space-x-3">{links}</ul>
       </div>
       <div className="navbar-end">
         <div className="flex gap-3">

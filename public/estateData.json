@@ -24,7 +24,7 @@
       "area": "1800 sq ft",
       "area_description": "Urban area",
       "location": "923 Folsom St, San Francisco",
-      "facilities": ["3 bedrooms", "2.5 bathrooms", "rooftop terrace"],
+      "facilities": ["3 bedrooms", "2 bathrooms", "rooftop terrace"],
       "image": "https://i.ibb.co/zRDGRmZ/2-modern-townhouses.jpg"
     },
     {
@@ -49,10 +49,10 @@
       "details_desc": "This modern housing complex offers furnished rooms and shared living spaces, perfect for students. It provides easy access to the university campus and amenities like study lounges and fitness centers.",
       "price": "$800/month",
       "status": "rent",
-      "area": "250 sq ft (Shared rooms)",
+      "area": "250 sq ft",
       "area_description": "Near university campus",
       "location": "1785 Massachusetts Ave, Cambridge",
-      "facilities": ["Furnished rooms", "Study lounges", "Fitness center"],
+      "facilities": ["1 bedrooms", "1 bathrooms","Furnished rooms", "Study lounges", "Fitness center"],
       "image": "https://i.ibb.co/VJS3mMS/4-Student-Housing-Complex.jpg"
     },
     {
@@ -63,10 +63,10 @@
       "details_desc": "This vibrant community offers assisted living apartments and a range of amenities for active seniors. It provides medical assistance, recreational activities, and community events in a supportive environment.",
       "price": "$3,000/month",
       "status": "rent",
-      "area": "800 sq ft (Assisted living apartments)",
+      "area": "800 sq ft",
       "area_description": "Retirement village",
       "location": "625 Belmont Ave, Springfield",
-      "facilities": ["Medical assistance", "Recreational activities", "Community events"],
+      "facilities": ["1 bedrooms", "1 bathrooms","Medical assistance", "Recreational activities", "Community events"],
       "image": "https://i.ibb.co/6tMXnXH/5-Senior-Living-Community-1.jpg"
     },
     {
@@ -77,10 +77,10 @@
       "details_desc": "This luxurious villa offers 5 bedrooms, a private pool, and direct beach access. It is ideal for a relaxing beach vacation with family and friends, providing all the comforts of home in a stunning beachfront location.",
       "price": "$1,200/night",
       "status": "rent",
-      "area": "3500 sq ft (Private villa)",
+      "area": "3500 sq ft",
       "area_description": "Beachfront",
       "location": "1525 Pacific Ave, Atlantic City",
-      "facilities": ["5 bedrooms", "Private pool", "Beach access"],
+      "facilities": ["5 bedrooms", "3 bathrooms", "Private pool", "Beach access"],
       "image": "https://i.ibb.co/9qxbMvr/6-Beachfront-Villa-1.jpg"
     },
     {
@@ -91,10 +91,10 @@
       "details_desc": "This cozy cottage offers a rustic charm with modern amenities. It features a fireplace, outdoor seating area, and scenic views of the countryside. Perfect for a relaxing getaway surrounded by nature.",
       "price": "$150/night",
       "status": "rent",
-      "area": "1000 sq ft (Rural area)",
+      "area": "1000 sq ft",
       "area_description": "Scenic countryside",
       "location": "430 2nd St, Solvang",
-      "facilities": ["Fireplace", "Outdoor seating area", "Scenic views"],
+      "facilities": ["2 bedrooms", "2 bathrooms","Fireplace", "Outdoor seating area", "Scenic views"],
       "image": "https://i.ibb.co/vVbv1bv/7-Cozy-Cottage.jpg"
     },
     {
@@ -108,7 +108,7 @@
       "area": "700 sq ft",
       "area_description": "Urban area",
       "location": "923 Folsom St, San Francisco",
-      "facilities": ["1 bedroom", "1 bathroom", "floor-to-ceiling windows"],
+      "facilities": ["2 bedroom", "2 bathroom", "floor-to-ceiling windows"],
       "image": "https://i.ibb.co/3vVd8Xm/8-City-View-Apartment.jpg"
     },
     {
@@ -119,10 +119,10 @@
       "details_desc": "This secluded retreat offers a peaceful escape surrounded by nature. It features a hot tub, hiking trails nearby, and stunning mountain views. Ideal for a relaxing mountain retreat.",
       "price": "$200/night",
       "status": "rent",
-      "area": "1200 sq ft (Cabin)",
+      "area": "1200 sq ft",
       "area_description": "Mountainous region",
       "location": "1625 S Decatur Blvd, Las Vegas",
-      "facilities": ["Hot tub", "Hiking trails nearby", "Peaceful surroundings"],
+      "facilities": ["2 bedrooms", "1 bathrooms","Hot tub", "Hiking trails nearby", "Peaceful surroundings"],
       "image": "https://i.ibb.co/cJdtwZN/9-Mountain-Retreat-final.jpg"
     }
   ]
