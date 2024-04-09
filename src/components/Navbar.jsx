@@ -11,7 +11,7 @@ const Navbar = () => {
         <NavLink className='text-lg' to="/">Home</NavLink>
       </li>
       <li>
-        <NavLink className='text-lg' to="/estates">Estates</NavLink>
+        <NavLink className='text-lg' to="/properties">Properties</NavLink>
       </li>
       {user ? (
         <li>
@@ -85,7 +85,7 @@ const Navbar = () => {
                 className="w-12 h-12 rounded-full ring-2 ring-offset-4 dark:bg-gray-500 dark:ring-violet-600 dark:ring-offset-gray-100"
                 src={user?.photoURL ? user.photoURL : 'https://i.ibb.co/tJTV83n/user-image-not-found.jpg'}
               />
-              <button onClick={handleLogOut} className="btn btn-secondary">
+              <button onClick={handleLogOut} className="btn btn-secondary bg-[#E855DE] hover:bg-[#f04970] sm:text-lg text-white">
                 Logout
               </button>
             </>

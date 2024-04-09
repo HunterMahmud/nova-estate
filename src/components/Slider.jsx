@@ -22,7 +22,7 @@ const Slider = () => {
           </h1>
           <div className="flex items-center gap-3">
             <span className="text-[50px] ">&rarr;</span>
-            <Link to='/estates' className="uppercase mt-2 p-2 border border-blue-500 rounded-md">explore more</Link>
+            <Link to='/properties' className="uppercase mt-2 p-2 border border-blue-500 rounded-md">explore more</Link>
           </div>
         </div>
       </div>

@@ -70,10 +70,10 @@ const SingleState = ({ home }) => {
             </div>
             <div className="mt-3 w-full">
               <Link
-                to={`/estates/${id}`}
+                to={`/properties/${id}`}
                 className="btn w-full btn-primary bg-violet-500"
               >
-                See Details
+                View Property
               </Link>
             </div>
           </div>

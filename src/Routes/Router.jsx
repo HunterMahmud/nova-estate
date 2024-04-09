@@ -28,12 +28,12 @@ const router = createBrowserRouter([
                 element: <NonProtectRedirectRoute><Register/></NonProtectRedirectRoute>
             },
             {
-                path:'/estates',
+                path:'/properties',
                 loader: ()=> fetch('/estateData.json'),
                 element: <EstatePage></EstatePage>
             },
             {
-                path:'/estates/:id',
+                path:'/properties/:id',
                 loader: ()=> fetch('/estateData.json'),
                 element: <EstateDetails></EstateDetails>
             },
