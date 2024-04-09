@@ -22,6 +22,9 @@ const EstateDetails = () => {
     facilities,
     image,
   } = home;
+
+  const details_paras = details_desc.split('|');
+
   return (
     <div className="max-w-7xl mx-auto">
       <Helmet>
@@ -29,16 +32,16 @@ const EstateDetails = () => {
       </Helmet>
       <div>
         <div>
-          <h1 className="text-3xl mt-10 ">
-            {estate_title} | {segment_name}
-          </h1>
+          <h1 className="text-3xl mt-10 ">{estate_title}</h1>
 
           <p className="flex items-center gap-2">
             <span>
               {" "}
               <FaLocationDot />{" "}
             </span>
-            <span>{location}</span>
+            <span>
+              {location} | {segment_name}
+            </span>
           </p>
         </div>
         <div>
@@ -46,7 +49,11 @@ const EstateDetails = () => {
             <figure>
               <img src={image} alt={estate_title} />
             </figure>
-            <div></div>
+            <div>
+                {
+                    details_paras.map((para, i)=><p className="py-2 font-poppins text-gray-300" key={i}>{para}</p>)
+                }
+            </div>
           </div>
         </div>
       </div>
