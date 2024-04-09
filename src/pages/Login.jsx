@@ -1,9 +1,9 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import contextProvider from "../components/contextProvider";
-import 'animate.css';
-import { toast } from 'react-toastify';
-
+import "animate.css";
+import { toast } from "react-toastify";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const {
@@ -12,51 +12,57 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
-  const {emailPasswordLogIn, googleLogin, githubLogin } = contextProvider();
+  const { emailPasswordLogIn, googleLogin, githubLogin } = contextProvider();
   const location = useLocation();
   const navigate = useNavigate();
 
   const onSubmitLogin = (data) => {
     console.log(data);
-    const {email, password} = data;
+    const { email, password } = data;
     emailPasswordLogIn(email, password)
-    .then(res=>{
-      // console.log(res.user);
-      toast.success('Login success.');
-      navigate(location?.state || '/')
-    })
-    .catch(err=>{
-      // console.log(err);
-      toast.error('Login failed. Invalid credentials')
-    })
+      .then((res) => {
+        // console.log(res.user);
+        toast.success("Login success.");
+        navigate(location?.state || "/");
+      })
+      .catch((err) => {
+        // console.log(err);
+        toast.error("Login failed. Invalid credentials");
+      });
   };
-  const handleLoginWithGoogle = ()=>{
+  const handleLoginWithGoogle = () => {
     googleLogin()
-    .then(res=> {
-      // console.log(res.user);
-      toast.success('Login success.')
-      navigate(location?.state || '/')
-    })
-    .catch(err=> {
-      // console.log(err);
-      toast.error('Login failed. Invalid credentials')
-    })
-  }
-  const handleLoginWithGithub= ()=>{
+      .then((res) => {
+        // console.log(res.user);
+        toast.success("Login success.");
+        navigate(location?.state || "/");
+      })
+      .catch((err) => {
+        // console.log(err);
+        toast.error("Login failed. Invalid credentials");
+      });
+  };
+  const handleLoginWithGithub = () => {
     githubLogin()
-    .then(res=> {
-      toast.success('Login success.')
-      // console.log(res.user);
-      navigate(location?.state || '/')
-    })
-    .catch(err=> {
-      // console.log(err); 
-      toast.error('Login failed. Invalid credentials')
-    })
-  }
+      .then((res) => {
+        toast.success("Login success.");
+        // console.log(res.user);
+        navigate(location?.state || "/");
+      })
+      .catch((err) => {
+        // console.log(err);
+        toast.error("Login failed. Invalid credentials");
+      });
+  };
   return (
     <div>
-      <div data-aos="zoom-in" className="w-full mb-9 max-w-md mx-auto mt-12 p-8 space-y-3 rounded-xl border border-gray-100/25 bg-main text-gray-100 shadow-lg">
+      <Helmet>
+        <title>Login | Nova Estate</title>
+      </Helmet>
+      <div
+        data-aos="zoom-in"
+        className="w-full mb-9 max-w-md mx-auto mt-12 p-8 space-y-3 rounded-xl border border-gray-100/25 bg-main text-gray-100 shadow-lg"
+      >
         <h1 className="text-2xl font-bold text-center ">Login</h1>
         <form onSubmit={handleSubmit(onSubmitLogin)} className="space-y-6">
           <div className="space-y-1 text-sm">
@@ -84,21 +90,21 @@ const Login = () => {
               Password
             </label>
             <input
-             {...register('password',{
-              required:{
-                value:true,
-                message: "This field is required."
-              }
-            })}
+              {...register("password", {
+                required: {
+                  value: true,
+                  message: "This field is required.",
+                },
+              })}
               type="password"
               name="password"
               id="password"
               placeholder="Password"
               className="w-full px-4 py-3 rounded-md border-2 border-gray-500 bg-main text-gray-100 focus:border-violet-400"
             />
-            {
-            errors?.password?.message && <span className="text-red-500">{errors.password.message}</span>
-           }
+            {errors?.password?.message && (
+              <span className="text-red-500">{errors.password.message}</span>
+            )}
             <div className="flex justify-end text-xs text-gray-200">
               <Link className="underline">Forgot Password?</Link>
             </div>
@@ -115,7 +121,11 @@ const Login = () => {
           <div className="flex-1 h-px sm:w-16 bg-gray-700"></div>
         </div>
         <div className="flex justify-center space-x-4">
-          <button onClick={handleLoginWithGoogle} title="Log in with Google" className="p-3 rounded-sm">
+          <button
+            onClick={handleLoginWithGoogle}
+            title="Log in with Google"
+            className="p-3 rounded-sm"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 32 32"
@@ -133,7 +143,11 @@ const Login = () => {
               <path d="M31.937 6.093c-1.177 0.516-2.437 0.871-3.765 1.032 1.355-0.813 2.391-2.099 2.885-3.631-1.271 0.74-2.677 1.276-4.172 1.579-1.192-1.276-2.896-2.079-4.787-2.079-3.625 0-6.563 2.937-6.563 6.557 0 0.521 0.063 1.021 0.172 1.495-5.453-0.255-10.287-2.875-13.52-6.833-0.568 0.964-0.891 2.084-0.891 3.303 0 2.281 1.161 4.281 2.916 5.457-1.073-0.031-2.083-0.328-2.968-0.817v0.079c0 3.181 2.26 5.833 5.26 6.437-0.547 0.145-1.131 0.229-1.724 0.229-0.421 0-0.823-0.041-1.224-0.115 0.844 2.604 3.26 4.5 6.14 4.557-2.239 1.755-5.077 2.801-8.135 2.801-0.521 0-1.041-0.025-1.563-0.088 2.917 1.86 6.36 2.948 10.079 2.948 12.067 0 18.661-9.995 18.661-18.651 0-0.276 0-0.557-0.021-0.839 1.287-0.917 2.401-2.079 3.281-3.396z"></path>
             </svg>
           </button> */}
-          <button onClick={handleLoginWithGithub} title="Log in with GitHub" className="p-3 rounded-sm">
+          <button
+            onClick={handleLoginWithGithub}
+            title="Log in with GitHub"
+            className="p-3 rounded-sm"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 32 32"

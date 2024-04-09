@@ -5,3 +5,4 @@
 5. npm i react-toastify
 6. npm install swiper
 7. npm install react-icons
+8. npm i react-helmet-async

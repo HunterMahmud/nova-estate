@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import contextProvider from "../components/contextProvider";
 import { updateProfile } from "firebase/auth";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const { emailPasswordRegister } = contextProvider();
@@ -28,18 +29,19 @@ const Register = () => {
           });
       })
       .catch((err) => {
-       
-        if (err?.customData?._tokenResponse?.error?.message == 'EMAIL_EXISTS') {
+        if (err?.customData?._tokenResponse?.error?.message == "EMAIL_EXISTS") {
           toast.error("Email already exists.");
-        }
-        else{
-          toast.error("Register unsuccessful.")
+        } else {
+          toast.error("Register unsuccessful.");
         }
       });
   };
-  
+
   return (
     <div>
+      <Helmet>
+        <title>Register | Nova Estate</title>
+      </Helmet>
       <div
         data-aos="zoom-in"
         className="w-full mb-9 border border-gray-100/25 max-w-md mx-auto mt-12 p-8 space-y-3 rounded-xl bg-main text-gray-100"
