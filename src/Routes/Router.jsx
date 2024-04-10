@@ -5,9 +5,9 @@ import Root from '../Layout/Root';
 import NotFound from './../pages/NotFound';
 import Login from './../pages/Login';
 import Register from './../pages/Register';
-import NonProtectRedirectRoute from '../components/NonProtectRedirectRoute';
 import EstatePage from '../pages/EstatePage';
 import EstateDetails from '../pages/EstateDetails';
+import ProtectedRoute from './../components/ProtectedRoute';
 
 const router = createBrowserRouter([
     {
@@ -21,11 +21,11 @@ const router = createBrowserRouter([
             },
             {
                 path: '/login',
-                element: <NonProtectRedirectRoute><Login/></NonProtectRedirectRoute>
+                element: <Login/>
             },
             {
                 path: '/register',
-                element: <NonProtectRedirectRoute><Register/></NonProtectRedirectRoute>
+                element: <Register/>
             },
             {
                 path:'/properties',
@@ -35,7 +35,7 @@ const router = createBrowserRouter([
             {
                 path:'/properties/:id',
                 loader: ()=> fetch('/estateData.json'),
-                element: <EstateDetails></EstateDetails>
+                element: <ProtectedRoute><EstateDetails></EstateDetails></ProtectedRoute>
             },
             {
                 path:'/updateprofile',

@@ -20,7 +20,7 @@ const SingleState = ({ home }) => {
     status,
   } = home;
   return (
-    <div className="mx-2">
+    <div data-aos="fade-up" className="mx-2">
       <div className="flex flex-col max-w-sm mx-auto space-y-6 overflow-hidden rounded-md border border-gray-100/25 hover:shadow-[20px,20px,20px,5px,rgba(255,255,255,0.01)] shadow-xl bg-main text-gray-100">
         <div>
           {/* image container starts */}

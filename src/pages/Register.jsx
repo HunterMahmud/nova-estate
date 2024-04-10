@@ -142,11 +142,6 @@ const Register = () => {
                     return "Password must include a uppercase character.";
                   },
                 },
-
-                maxLength: {
-                  value: 10,
-                  message: "Password must be at most 12 characters.",
-                },
               })}
               type="password"
               name="password"

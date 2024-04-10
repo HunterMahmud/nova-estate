@@ -1,9 +1,16 @@
-import { Link, ScrollRestoration, useLocation, useNavigate } from "react-router-dom";
+import {
+  Link,
+  ScrollRestoration,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import { useForm } from "react-hook-form";
 import contextProvider from "../components/contextProvider";
 import "animate.css";
 import { toast } from "react-toastify";
 import { Helmet } from "react-helmet-async";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { useState } from 'react';
 
 const Login = () => {
   const {
@@ -12,18 +19,22 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
-  const { emailPasswordLogIn, googleLogin, githubLogin } = contextProvider();
+  const { emailPasswordLogIn, googleLogin, githubLogin } =
+    contextProvider();
   const location = useLocation();
   const navigate = useNavigate();
-
+  const [showPass, setShowPass] = useState(false);
+  console.log(location);
+ 
   const onSubmitLogin = (data) => {
     console.log(data);
     const { email, password } = data;
     emailPasswordLogIn(email, password)
       .then((res) => {
         // console.log(res.user);
+
         toast.success("Login success.");
-        navigate(location?.state || "/");
+        navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {
         // console.log(err);
@@ -35,7 +46,7 @@ const Login = () => {
       .then((res) => {
         // console.log(res.user);
         toast.success("Login success.");
-        navigate(location?.state || "/");
+        navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {
         // console.log(err);
@@ -47,7 +58,7 @@ const Login = () => {
       .then((res) => {
         toast.success("Login success.");
         // console.log(res.user);
-        navigate(location?.state || "/");
+        navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {
         // console.log(err);
@@ -59,7 +70,7 @@ const Login = () => {
       <Helmet>
         <title>Login | Nova Estate</title>
       </Helmet>
-      <ScrollRestoration/>
+      <ScrollRestoration />
       <div
         data-aos="zoom-in"
         className="w-full mb-9 max-w-md mx-auto mt-12 p-8 space-y-3 rounded-xl border border-gray-100/25 bg-main text-gray-100 shadow-lg"
@@ -90,6 +101,7 @@ const Login = () => {
             <label htmlFor="password" className="block text-gray-400">
               Password
             </label>
+            <div className="relative">
             <input
               {...register("password", {
                 required: {
@@ -97,12 +109,14 @@ const Login = () => {
                   message: "This field is required.",
                 },
               })}
-              type="password"
+              type={showPass?"text":"password"}
               name="password"
               id="password"
               placeholder="Password"
               className="w-full px-4 py-3 rounded-md border-2 border-gray-500 bg-main text-gray-100 focus:border-violet-400"
             />
+            <span className="absolute top-4 right-3" onClick={()=>{setShowPass(!showPass)}}>{showPass?<FaEyeSlash/>:<FaEye/>}</span>
+            </div>
             {errors?.password?.message && (
               <span className="text-red-500">{errors.password.message}</span>
             )}

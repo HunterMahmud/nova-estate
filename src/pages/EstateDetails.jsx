@@ -43,7 +43,7 @@ const EstateDetails = () => {
       <div className="max-w-7xl mx-auto">
         <div>
           <div className="flex flex-col lg:flex-row justify-between gap-5 mt-10 ">
-            <div className="lg:w-1/2">
+            <div data-aos="fade-right" data-aos-duration="1000" className="lg:w-1/2">
               <div className="title-and-text">
                 <h1 className="text-3xl text-gray-200">
                   {estate_title} ( For{" "}
@@ -69,7 +69,7 @@ const EstateDetails = () => {
               </div>
             </div>
 
-            <div className="details-container mt-5 w-full lg:w-1/2">
+            <div data-aos="fade-left" data-aos-duration="800" className="details-container mt-5 w-full lg:w-1/2">
               <h3 className="text-2xl text-gray-200 uppercase font-poppins">
                 Property Details
               </h3>
@@ -126,16 +126,16 @@ const EstateDetails = () => {
             </div>
           </div>
           <div>
-            <h3 className="text-2xl text-gray-200 mt-10 uppercase font-poppins">
+            <h3 data-aos="fade-left" data-aos-duration="500"  className="text-2xl text-gray-200 mt-10 uppercase font-poppins">
               Descriptions
             </h3>
             {details_paras.map((para, i) => (
-              <p className="py-2 font-poppins text-gray-300" key={i}>
+              <p data-aos="fade-left" data-aos-duration="200"   className="py-2 font-poppins text-gray-300" key={i}>
                 {para}
               </p>
             ))}
           </div>
-          <div>
+          <div data-aos="fade-left" data-aos-duration="200" >
             <h3 className="text-2xl text-gray-200 mt-10 uppercase font-poppins mb-5">
               Location : <span className="capitalize">{location}</span>
             </h3>

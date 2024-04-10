@@ -3,7 +3,8 @@ import contextProvider from "./contextProvider";
 
 const ProtectedRoute = ({children}) => {
     const location = useLocation();
-    const {user} = contextProvider();
+    const {user, loading} = contextProvider();
+    if(loading) return;
     if(user)  {
        return children;
     }

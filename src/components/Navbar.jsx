@@ -13,20 +13,17 @@ const Navbar = () => {
       <li>
         <NavLink className='text-lg' to="/properties">Properties</NavLink>
       </li>
-      {user ? (
+      {user && (
+        <>
         <li>
           <NavLink className='text-lg' to="/updateprofile">Update Profile</NavLink>
         </li>
-      ) : (
-        <>
-          <li>
-            <NavLink className='text-lg' to="/register">Register</NavLink>
-          </li>
-          <li>
-            <NavLink className='text-lg' to="/login">Login</NavLink>
-          </li>
+        <li>
+          <NavLink className='text-lg' to="/updateprofile">User Profile</NavLink>
+        </li>
         </>
-      )}
+        
+      ) }
     </>
   );
   const handleLogOut = () => {
