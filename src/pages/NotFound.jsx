@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, ScrollRestoration } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
 const NotFound = () => {
@@ -8,6 +8,7 @@ const NotFound = () => {
           <Helmet>
                 <title>Not Found | Nova Estate</title>
             </Helmet>
+            <ScrollRestoration/>
       <div className="container flex flex-col items-center justify-center px-5 mx-auto my-8">
         <div className="max-w-md text-center">
           <h2 className="mb-8 font-extrabold text-9xl text-gray-600">

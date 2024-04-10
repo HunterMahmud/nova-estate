@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, ScrollRestoration } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import contextProvider from "../components/contextProvider";
 import { updateProfile } from "firebase/auth";
@@ -42,6 +42,7 @@ const Register = () => {
       <Helmet>
         <title>Register | Nova Estate</title>
       </Helmet>
+      <ScrollRestoration/>
       <div
         data-aos="zoom-in"
         className="w-full mb-9 border border-gray-100/25 max-w-md mx-auto mt-12 p-8 space-y-3 rounded-xl bg-main text-gray-100"

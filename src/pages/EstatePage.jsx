@@ -1,12 +1,13 @@
-import { useLoaderData } from "react-router-dom";
+import { ScrollRestoration, useLoaderData } from "react-router-dom";
 import EstateSection from "../components/EstateSection";
 import { Helmet } from "react-helmet-async";
 
 const EstatePage = () => {
   const homes = useLoaderData();
-  console.log(homes);
+  // console.log(homes);
   return (
     <div>
+      <ScrollRestoration/>
       {homes && (
         <Helmet>
           <title>Properties | Nova Estate</title>

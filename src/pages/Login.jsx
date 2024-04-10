@@ -1,4 +1,4 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, ScrollRestoration, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import contextProvider from "../components/contextProvider";
 import "animate.css";
@@ -59,6 +59,7 @@ const Login = () => {
       <Helmet>
         <title>Login | Nova Estate</title>
       </Helmet>
+      <ScrollRestoration/>
       <div
         data-aos="zoom-in"
         className="w-full mb-9 max-w-md mx-auto mt-12 p-8 space-y-3 rounded-xl border border-gray-100/25 bg-main text-gray-100 shadow-lg"
