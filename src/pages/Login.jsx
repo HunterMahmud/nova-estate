@@ -55,7 +55,7 @@ const Login = () => {
       });
   };
   return (
-    <div>
+    <div className="mx-2">
       <Helmet>
         <title>Login | Nova Estate</title>
       </Helmet>

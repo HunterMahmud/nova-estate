@@ -57,7 +57,7 @@
     "status": "sale",
     "area": "1200 sq ft",
     "year_of_build": 2020,
-    "parking_facilities": "Yes",
+    "parking_facilities": "No",
     "area_description": "Downtown",
     "location": "35 Pond St, New York",
     "gps_location": [
@@ -184,7 +184,7 @@
     "status": "sale",
     "area": "700 sq ft",
     "year_of_build": 2016,
-    "parking_facilities": "Yes",
+    "parking_facilities": "No",
     "area_description": "Urban area",
     "location": "812 Folsom St, Los Angeles",
     "gps_location": [

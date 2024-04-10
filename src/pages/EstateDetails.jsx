@@ -31,12 +31,12 @@ const EstateDetails = () => {
   const details_paras = details_desc.split("|");
 
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="mx-3">
       <Helmet>
         <title>{estate_title} | Nova Estate</title>
       </Helmet>
       <ScrollRestoration/>
-      <div className="">
+      <div className="max-w-7xl mx-auto">
         <div>
           <div className="flex flex-col lg:flex-row justify-between gap-5 mt-10 ">
             <div className="lg:w-1/2">

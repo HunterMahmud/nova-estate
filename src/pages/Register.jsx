@@ -10,10 +10,12 @@ const Register = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
   const onSubmitRegister = (data) => {
     const { email, password, photoURL, name } = data;
+    reset();
     emailPasswordRegister(email, password)
       .then((res) => {
         updateProfile(res.user, {
@@ -21,11 +23,10 @@ const Register = () => {
           photoURL: photoURL,
         })
           .then(() => {
-            console.log(res.user);
             toast.success("Register successful.");
           })
           .catch((error) => {
-            toast.error("Error happened updating info");
+            toast.error("Error occured.");
           });
       })
       .catch((err) => {
@@ -38,11 +39,11 @@ const Register = () => {
   };
 
   return (
-    <div>
+    <div className="mx-2">
       <Helmet>
         <title>Register | Nova Estate</title>
       </Helmet>
-      <ScrollRestoration/>
+      <ScrollRestoration />
       <div
         data-aos="zoom-in"
         className="w-full mb-9 border border-gray-100/25 max-w-md mx-auto mt-12 p-8 space-y-3 rounded-xl bg-main text-gray-100"

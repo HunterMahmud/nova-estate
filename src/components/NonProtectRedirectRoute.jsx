@@ -1,9 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import contextProvider from './contextProvider';
 import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
 import { useEffect } from 'react';
-import { Navigate } from 'react-router-dom';
 
 const NonProtectRedirectRoute = ({children}) => {
     const location = useLocation();
@@ -15,7 +13,6 @@ useEffect(() => {
     if (!user) {
         return;
     }
-    toast.info(`Logout to see ${location?.pathname === '/login' ? 'login' : 'register'}`);
     navigate('/');
 }, [user, location.pathname, navigate]);
 
