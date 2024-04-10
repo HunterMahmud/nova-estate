@@ -6,3 +6,4 @@
 6. npm install swiper
 7. npm install react-icons
 8. npm i react-helmet-async
+9. npm install react react-dom leaflet

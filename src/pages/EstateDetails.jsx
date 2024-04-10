@@ -4,6 +4,10 @@ import { Helmet } from "react-helmet-async";
 import { FaLocationDot } from "react-icons/fa6";
 import { ScrollRestoration } from "react-router-dom";
 
+// import { Marker, Popup } from "leaflet";
+import { TileLayer, MapContainer, Marker, Popup } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+
 const EstateDetails = () => {
   const { id: pId } = useParams();
   const homes = useLoaderData();
@@ -27,41 +31,50 @@ const EstateDetails = () => {
     parking_facilities,
     image,
   } = home;
-
+  console.log(gps_location);
   const details_paras = details_desc.split("|");
 
   return (
-    <div className="mx-3">
+    <div className="mx-3 mb-40">
       <Helmet>
         <title>{estate_title} | Nova Estate</title>
       </Helmet>
-      <ScrollRestoration/>
+      <ScrollRestoration />
       <div className="max-w-7xl mx-auto">
         <div>
           <div className="flex flex-col lg:flex-row justify-between gap-5 mt-10 ">
             <div className="lg:w-1/2">
               <div className="title-and-text">
-                <h1 className="text-3xl ">{estate_title}</h1>
+                <h1 className="text-3xl text-gray-200">
+                  {estate_title} ( For{" "}
+                  <span className="capitalize">{status} )</span>
+                </h1>
 
-                <p className="flex items-center gap-2 my-2">
+                <p className="flex items-center text-sm gap-2 my-2">
                   <span>
                     {" "}
                     <FaLocationDot />{" "}
                   </span>
-                  <span>
+                  <span className="capitalize">
                     {location} | {segment_name}
                   </span>
                 </p>
               </div>
-              <img className="w-full " src={image} alt={estate_title} />
+              <div className="w-full relative">
+                {" "}
+                <img className="w-full " src={image} alt={estate_title} />
+                <span className="absolute p-3 bottom-0 right-0 text-white font-poppins font-bold tracking-wide bg-gradient-to-r from-purple-500 to-pink-500">
+                  Rate: {price}
+                </span>
+              </div>
             </div>
 
-            <div className="details-container mt-6 w-full lg:w-1/2">
-              <h3 className="text-2xl uppercase font-poppins">
+            <div className="details-container mt-5 w-full lg:w-1/2">
+              <h3 className="text-2xl text-gray-200 uppercase font-poppins">
                 Property Details
               </h3>
               {/* table */}
-              <div className="bg-gray-600 rounded-md mt-5 w-full font-bold font-poppins">
+              <div className="bg-gray-600 text-gray-200 rounded-md mt-5 w-full font-bold font-poppins">
                 <div className="overflow-x-auto">
                   <table className="table">
                     <tbody>
@@ -72,6 +85,14 @@ const EstateDetails = () => {
                       <tr>
                         <td>Area Type</td>
                         <td>{area_description}</td>
+                      </tr>
+                      <tr>
+                        <td>Year of Build</td>
+                        <td>{year_of_build}</td>
+                      </tr>
+                      <tr>
+                        <td>Total Area</td>
+                        <td>{area}</td>
                       </tr>
                       <tr>
                         <td>Number of Rooms</td>
@@ -105,11 +126,38 @@ const EstateDetails = () => {
             </div>
           </div>
           <div>
+            <h3 className="text-2xl text-gray-200 mt-10 uppercase font-poppins">
+              Descriptions
+            </h3>
             {details_paras.map((para, i) => (
               <p className="py-2 font-poppins text-gray-300" key={i}>
                 {para}
               </p>
             ))}
+          </div>
+          <div>
+            <h3 className="text-2xl text-gray-200 mt-10 uppercase font-poppins mb-5">
+              Location : <span className="capitalize">{location}</span>
+            </h3>
+
+            <div className="w-full max-w-5xl h-[400px] lg:h-[500px] ">
+              <MapContainer
+                center={gps_location}
+                zoom={13}
+                scrollWheelZoom={false}
+                style={{ height: "100%", width: "100%" }}
+              >
+                <TileLayer
+                  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                />
+                <Marker position={gps_location}>
+                  <Popup>
+                    {location}
+                  </Popup>
+                </Marker>
+              </MapContainer>
+            </div>
           </div>
         </div>
       </div>
