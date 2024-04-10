@@ -23,11 +23,19 @@ const SingleState = ({ home }) => {
     <div className="mx-2">
       <div className="flex flex-col max-w-sm mx-auto space-y-6 overflow-hidden rounded-md border border-gray-100/25 hover:shadow-[20px,20px,20px,5px,rgba(255,255,255,0.01)] shadow-xl bg-main text-gray-100">
         <div>
+          {/* image container starts */}
+          <div className="overflow-hidden relative w-full h-60">
           <img
             src={image}
             alt={estate_title}
-            className="object-cover w-full h-60 bg-gray-500"
+            className="object-cover w-full h-60 transition-transform  duration-1000 transform hover:scale-125 bg-gray-500"
           />
+          </div>
+          {/* image container ends */}
+          
+          {/* this is image transition <figure class="overflow-hidden relative w-[200px] h-[200px]">
+              <img class="transition-transform  duration-1000 transform hover:scale-125" src={image} alt={estate_title} />
+            </figure> */}
           <div className="flex flex-col p-4">
             <div className="flex justify-between text-sm mb-3 gap-2 items-center flex-wrap">
               <div className="flex gap-2 items-center">
