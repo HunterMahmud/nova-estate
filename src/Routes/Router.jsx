@@ -1,4 +1,3 @@
-import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import Home from './../pages/Home';
 import Root from '../Layout/Root';
@@ -8,6 +7,7 @@ import Register from './../pages/Register';
 import EstatePage from '../pages/EstatePage';
 import EstateDetails from '../pages/EstateDetails';
 import ProtectedRoute from './../components/ProtectedRoute';
+import UpdateProfile from './../pages/UpdateProfile';
 
 const router = createBrowserRouter([
     {
@@ -17,15 +17,15 @@ const router = createBrowserRouter([
         children:[
             {
                 path: '/',
-                element: <Home/>
+                element: <Home/>,
             },
             {
                 path: '/login',
-                element: <Login/>
+                element: <Login/>,
             },
             {
                 path: '/register',
-                element: <Register/>
+                element: <Register/>,
             },
             {
                 path:'/properties',
@@ -35,12 +35,13 @@ const router = createBrowserRouter([
             {
                 path:'/properties/:id',
                 loader: ()=> fetch('/estateData.json'),
-                element: <ProtectedRoute><EstateDetails></EstateDetails></ProtectedRoute>
+                element: <ProtectedRoute><EstateDetails></EstateDetails></ProtectedRoute>,
             },
             {
                 path:'/updateprofile',
-                element: <h1>update profile</h1>
-            }
+                element: <ProtectedRoute><UpdateProfile></UpdateProfile></ProtectedRoute>,
+            },
+            
         ]
     }
 ])

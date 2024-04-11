@@ -18,9 +18,7 @@ const Navbar = () => {
         <li>
           <NavLink className='text-lg' to="/updateprofile">Update Profile</NavLink>
         </li>
-        <li>
-          <NavLink className='text-lg' to="/updateprofile">User Profile</NavLink>
-        </li>
+        
         </>
         
       ) }

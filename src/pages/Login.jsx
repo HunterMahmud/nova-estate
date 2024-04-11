@@ -120,9 +120,10 @@ const Login = () => {
             {errors?.password?.message && (
               <span className="text-red-500">{errors.password.message}</span>
             )}
-            <div className="flex justify-end text-xs text-gray-200">
+            {/* i can implement forgot password after get the result */}
+            {/* <div className="flex justify-end text-xs text-gray-200">
               <Link className="underline">Forgot Password?</Link>
-            </div>
+            </div> */}
           </div>
           <button className="block w-full p-3 text-center rounded-sm text-black bg-violet-500">
             Login
