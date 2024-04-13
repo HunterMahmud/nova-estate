@@ -1,79 +1,77 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import contextProvider from "./../components/contextProvider";
-import { useForm } from 'react-hook-form';
-import { updateProfile } from 'firebase/auth';
-import auth from './../Firebase/firebase.config';
-import { toast } from 'react-toastify';
+import { useForm } from "react-hook-form";
+import { updateProfile } from "firebase/auth";
+import auth from "./../Firebase/firebase.config";
+import { toast } from "react-toastify";
 import { useState } from "react";
 import { useEffect } from "react";
 
 const UpdateProfile = () => {
-  const { user } = contextProvider();
-  const [reload, setReload] = useState(false);
-  const [defaultValues, setDefaultValues] = useState({});
-  const [defaultValuesSet, setDefaultValuesSet] = useState(false);
+  const { user, reload, setReload } = contextProvider();
   const { photoURL, displayName, email } = user;
+  const [handleLoadButton, setHandleLoadButton] = useState(false);
   let updateMail = email;
-  if(!email){
-    updateMail = 'Email not found';
+  if (!email) {
+    updateMail = "Email not found";
   }
-  
-  // useEffect(()=>{
-  //   setDefaultValues({
-  //     displayName,
-  //     photoURL,
-  //     email:updateMail,
-  //   });
-  //   // setDefaultValuesSet(true);
-  //   console.log("why?");
-  //   reset({isDirty:false});
-  // },[reload]);
-  const { register, handleSubmit,reset, formState: { isDirty }  } = useForm(
-    {defaultValues:{
+
+  const defaultValues = {
+    displayName,
+    photoURL,
+    email: updateMail,
+  };
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { isDirty, isSubmitSuccessful },
+  } = useForm({
+    defaultValues: {
+      ...defaultValues,
+    },
+  });
+
+  useEffect(() => {
+    if (isSubmitSuccessful || reload) {
+      console.log("vitore", displayName, email, photoURL);
+      setReload(true);
+      reset({ ...defaultValues });
+    }
+  }, [isSubmitSuccessful, reset, user, reload]);
+
+  const onSubmitEdit = (updateInfo) => {
+    const { displayName, photoURL } = updateInfo;
+    updateProfile(auth.currentUser, {
       displayName,
       photoURL,
-      email,
-    }
-    }
-  );
-  // const information = {
-  //   "displayName": displayName,
-  //   "photoURL":photoURL,
-  //   "email":updateMail,
-  // };
-  // console.log(defaultValues);
-  // console.log({defaultValues});
-  
- 
-  const onSubmitEdit =(updateInfo)=>{
-    console.log(updateInfo);
-    const {displayName, photoURL} = updateInfo;
-    updateProfile(auth.currentUser, {
-      displayName, photoURL
-    }).then(() => {
-      toast.success("Profile Updated Successfully")
-      setReload(!reload);
-    }).catch(() => {
-      toast.error("Can't Update. Error occured.")
-    });
-    
+    })
+      .then(() => {
+        toast.success("Profile Updated Successfully");
+        reset(
+          { displayName: displayName, photoURL: photoURL },
+          { keepValues: false, keepDirty: true, keepDefaultValues: false }
+        );
+      })
+      .catch(() => {
+        toast.error("Can't Update. Error occured.");
+      });
   };
 
-  console.log(user);
+  // console.log(user);
   return (
     <div className="mx-2">
       <Helmet>
         <title>Update Profile | Nova Estate</title>
       </Helmet>
-      <div className="max-w-7xl mx-auto lg:grid grid-cols-4 bg-red-400">
+      <div className="max-w-7xl mx-auto  bg-red-400">
         <div className="bg-main rounded-md lg:col-span-1 flex flex-col items-center justify-center  my-10  p-8 text-gray-100">
           <img
             src={photoURL}
             alt={displayName}
             className="object-center w-40 h-40 mb-6 rounded-full"
           />
-
           <div className="flex flex-col items-center justify-center space-y-4">
             <div>
               <h2 className="text-2xl font-semibold">
@@ -102,7 +100,10 @@ const UpdateProfile = () => {
         </div>
         <div>
           <section className="p-6 my-10 lg:col-span-3 rounded-md bg-main text-gray-50">
-            <form onSubmit={handleSubmit(onSubmitEdit)} className="container flex flex-col mx-auto ">
+            <form
+              onSubmit={handleSubmit(onSubmitEdit)}
+              className="container flex flex-col mx-auto "
+            >
               <fieldset className="grid grid-cols-4 gap-6 rounded-md shadow-sm ">
                 <div className="space-y-2 col-span-full lg:col-span-1">
                   <p className="font-medium">Personal Inormation</p>
@@ -113,7 +114,7 @@ const UpdateProfile = () => {
                       Name
                     </label>
                     <input
-                    {...register('displayName')}
+                      {...register("displayName")}
                       id="name"
                       type="text"
                       required={true}
@@ -126,11 +127,10 @@ const UpdateProfile = () => {
                       Email
                     </label>
                     <input
-                    {...register("email")}
+                      {...register("email")}
                       id="email"
                       type="email"
                       disabled={true}
-              
                       placeholder="Email"
                       className="w-full p-2 disabled:cursor-not-allowed  rounded-md focus:ring focus:ring-opacity-75 text-gray-500  border-gray-700"
                     />
@@ -141,7 +141,7 @@ const UpdateProfile = () => {
                       Photo URL
                     </label>
                     <input
-                    {...register("photoURL")}
+                      {...register("photoURL")}
                       id="address"
                       type="text"
                       required={true}
@@ -152,7 +152,15 @@ const UpdateProfile = () => {
                 </div>
               </fieldset>
               <div className="flex justify-end py-4">
-                <button disabled={!isDirty} onSubmit={()=>{setReload(!reload)}} className="p-2 rounded-md text-gray-100 bg-violet-500 disabled:bg-gray-500 disabled:text-gray-400 disabled:cursor-not-allowed">Save Changes</button>
+                <button
+                  disabled={!isDirty}
+                  onClick={() => {
+                    setHandleLoadButton(!handleLoadButton);
+                  }}
+                  className="p-2 rounded-md text-gray-100 bg-violet-500 disabled:bg-gray-500 disabled:text-gray-400 disabled:cursor-not-allowed"
+                >
+                  Save Changes
+                </button>
               </div>
             </form>
           </section>

@@ -43,6 +43,7 @@ AOS.init({
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [reload, setReload] = useState(false);
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
   const emailPasswordRegister = (email, password) => {
@@ -68,9 +69,9 @@ const logOut = ()=> {
   useEffect(()=>{
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
-       
         setUser(currentUser);
        setLoading(false);
+       setReload(true);
       }
       else{
         setUser(null);
@@ -86,6 +87,8 @@ const logOut = ()=> {
     githubLogin,
     loading,
     user,
+    reload,
+    setReload,
     logOut
   };
   return (
