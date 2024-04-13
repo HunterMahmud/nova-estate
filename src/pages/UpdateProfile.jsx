@@ -5,13 +5,11 @@ import { useForm } from "react-hook-form";
 import { updateProfile } from "firebase/auth";
 import auth from "./../Firebase/firebase.config";
 import { toast } from "react-toastify";
-import { useState } from "react";
 import { useEffect } from "react";
 
 const UpdateProfile = () => {
-  const { user, reload, setReload } = contextProvider();
+  const { user } = contextProvider();
   const { photoURL, displayName, email } = user;
-  const [handleLoadButton, setHandleLoadButton] = useState(false);
   let updateMail = email;
   if (!email) {
     updateMail = "Email not found";
@@ -34,12 +32,10 @@ const UpdateProfile = () => {
   });
 
   useEffect(() => {
-    if (isSubmitSuccessful || reload) {
-      console.log("vitore", displayName, email, photoURL);
-      setReload(true);
+    if (isSubmitSuccessful) {
       reset({ ...defaultValues });
     }
-  }, [isSubmitSuccessful, reset, user, reload]);
+  }, [isSubmitSuccessful]);
 
   const onSubmitEdit = (updateInfo) => {
     const { displayName, photoURL } = updateInfo;
@@ -65,7 +61,7 @@ const UpdateProfile = () => {
       <Helmet>
         <title>Update Profile | Nova Estate</title>
       </Helmet>
-      <div className="max-w-7xl mx-auto  bg-red-400">
+      <div className="max-w-7xl mx-auto">
         <div className="bg-main rounded-md lg:col-span-1 flex flex-col items-center justify-center  my-10  p-8 text-gray-100">
           <img
             src={photoURL}
@@ -154,9 +150,7 @@ const UpdateProfile = () => {
               <div className="flex justify-end py-4">
                 <button
                   disabled={!isDirty}
-                  onClick={() => {
-                    setHandleLoadButton(!handleLoadButton);
-                  }}
+                  
                   className="p-2 rounded-md text-gray-100 bg-violet-500 disabled:bg-gray-500 disabled:text-gray-400 disabled:cursor-not-allowed"
                 >
                   Save Changes

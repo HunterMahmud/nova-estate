@@ -1,8 +1,9 @@
-import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import contextProvider from "./contextProvider";
 import { toast } from 'react-toastify';
 import './Navbar.css'
+
+
 const Navbar = () => {
   const { user, logOut } = contextProvider();
   const links = (

@@ -1,16 +1,16 @@
 import contextProvider from "../components/contextProvider";
-import { Link, ScrollRestoration } from "react-router-dom";
+import { Link, ScrollRestoration, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { updateProfile } from "firebase/auth";
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
-import { useState } from 'react';
-
+import { useState } from "react";
 
 const Register = () => {
+  const navigate = useNavigate();
   const [showPass, setShowPass] = useState(false);
-  const { emailPasswordRegister } = contextProvider();
+  const { emailPasswordRegister, setReload, setUser } = contextProvider();
   const {
     register,
     handleSubmit,
@@ -28,8 +28,11 @@ const Register = () => {
         })
           .then(() => {
             toast.success("Register successful.");
+            setUser(res.user);
+            setReload(true);
+            navigate("/");
           })
-          .catch((error) => {
+          .catch(() => {
             toast.error("Error occured.");
           });
       })
@@ -123,37 +126,44 @@ const Register = () => {
               Password
             </label>
             <div className="relative">
-            <input
-              {...register("password", {
-                required: {
-                  value: true,
-                  message: "This field is required.",
-                },
-                minLength: {
-                  value: 6,
-                  message: "Password must be at least 6 characters.",
-                },
-                validate: {
-                  oneLower: (value) => {
-                    if (/^(?=.*[a-z])/.test(value)) {
-                      return true;
-                    }
-                    return "Password must include a lowercase character.";
+              <input
+                {...register("password", {
+                  required: {
+                    value: true,
+                    message: "This field is required.",
                   },
-                  oneUpper: (value) => {
-                    if (/^(?=.*[A-Z])/.test(value)) {
-                      return true;
-                    }
-                    return "Password must include a uppercase character.";
+                  minLength: {
+                    value: 6,
+                    message: "Password must be at least 6 characters.",
                   },
-                },
-              })}
-              type={showPass?"text":"password"}
-              name="password"
-              placeholder="Password"
-              className="w-full px-4 py-3 rounded-md border-2 border-gray-500 bg-main text-gray-100 focus:border-violet-400"
-            />
-             <span className="absolute top-4 right-3" onClick={()=>{setShowPass(!showPass)}}>{showPass?<FaEyeSlash/>:<FaEye/>}</span>
+                  validate: {
+                    oneLower: (value) => {
+                      if (/^(?=.*[a-z])/.test(value)) {
+                        return true;
+                      }
+                      return "Password must include a lowercase character.";
+                    },
+                    oneUpper: (value) => {
+                      if (/^(?=.*[A-Z])/.test(value)) {
+                        return true;
+                      }
+                      return "Password must include a uppercase character.";
+                    },
+                  },
+                })}
+                type={showPass ? "text" : "password"}
+                name="password"
+                placeholder="Password"
+                className="w-full px-4 py-3 rounded-md border-2 border-gray-500 bg-main text-gray-100 focus:border-violet-400"
+              />
+              <span
+                className="absolute top-4 right-3 cursor-pointer p-1"
+                onClick={() => {
+                  setShowPass(!showPass);
+                }}
+              >
+                {showPass ? <FaEye /> : <FaEyeSlash />}
+              </span>
             </div>
             {errors?.password?.message && (
               <span className="text-red-500">{errors.password.message}</span>

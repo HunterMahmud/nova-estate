@@ -1,13 +1,13 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
     <footer className="px-4 divide-y bg-base-100 text-gray-100">
       <div className="container max-w-7xl flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
         <div className="lg:w-1/3 ">
-          <a
-            rel="noopener noreferrer"
-            href="#"
+          <Link
+            to="/"
             className="flex justify-center space-x-3 lg:justify-start"
           >
             <div className="flex items-center justify-center w-14 h-14 rounded-full bg-violet-400">
@@ -20,7 +20,7 @@ const Footer = () => {
             <span className="self-center text-2xl font-semibold">
               Nova Estate
             </span>
-          </a>
+          </Link>
         </div>
         <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
           <div className="space-y-3">
