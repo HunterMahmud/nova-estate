@@ -8,6 +8,7 @@ import EstatePage from '../pages/EstatePage';
 import EstateDetails from '../pages/EstateDetails';
 import ProtectedRoute from './../components/ProtectedRoute';
 import UpdateProfile from './../pages/UpdateProfile';
+import FavoritesProperties from './../pages/FavoritesProperties';
 
 const router = createBrowserRouter([
     {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
                 path:'/updateprofile',
                 element: <ProtectedRoute><UpdateProfile></UpdateProfile></ProtectedRoute>,
             },
+            {
+                path:'/wishlist',
+                element: <ProtectedRoute><FavoritesProperties></FavoritesProperties></ProtectedRoute>
+            }
             
         ]
     }

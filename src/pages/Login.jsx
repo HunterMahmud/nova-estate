@@ -9,8 +9,6 @@ import contextProvider from "../components/contextProvider";
 import "animate.css";
 import { toast } from "react-toastify";
 import { Helmet } from "react-helmet-async";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { useState } from 'react';
 
 const Login = () => {
   const {
@@ -19,13 +17,11 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
-  const { emailPasswordLogIn, googleLogin, githubLogin } =
-    contextProvider();
+  const { emailPasswordLogIn, googleLogin, githubLogin } = contextProvider();
   const location = useLocation();
   const navigate = useNavigate();
-  const [showPass, setShowPass] = useState(false);
   console.log(location);
- 
+
   const onSubmitLogin = (data) => {
     console.log(data);
     const { email, password } = data;
@@ -101,7 +97,7 @@ const Login = () => {
             <label htmlFor="password" className="block text-gray-400">
               Password
             </label>
-            <div className="relative">
+
             <input
               {...register("password", {
                 required: {
@@ -109,14 +105,13 @@ const Login = () => {
                   message: "This field is required.",
                 },
               })}
-              type={showPass?"text":"password"}
+              type="password"
               name="password"
               id="password"
               placeholder="Password"
               className="w-full px-4 py-3 rounded-md border-2 border-gray-500 bg-main text-gray-100 focus:border-violet-400"
             />
-            <span className="absolute top-4 right-3" onClick={()=>{setShowPass(!showPass)}}>{showPass?<FaEyeSlash/>:<FaEye/>}</span>
-            </div>
+
             {errors?.password?.message && (
               <span className="text-red-500">{errors.password.message}</span>
             )}

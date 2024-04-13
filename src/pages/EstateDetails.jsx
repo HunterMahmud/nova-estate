@@ -4,16 +4,23 @@ import { Helmet } from "react-helmet-async";
 import { FaLocationDot } from "react-icons/fa6";
 import { ScrollRestoration } from "react-router-dom";
 
+import { collection, addDoc, getDocs ,doc } from "firebase/firestore";
+
 // import { Marker, Popup } from "leaflet";
 import { TileLayer, MapContainer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+import { db } from './../Firebase/firebase.config';
+import { toast } from 'react-toastify';
+import contextProvider from './../components/contextProvider';
 
 const EstateDetails = () => {
   const { id: pId } = useParams();
   const homes = useLoaderData();
+  const {user} = contextProvider();
+  // console.log(user.uid);
 
   const home = homes.find((h) => h.id == pId);
-  console.log(home);
+  // console.log(home);
   const {
     id,
     estate_title,
@@ -26,13 +33,22 @@ const EstateDetails = () => {
     area_description,
     gps_location,
     facilities,
-
     year_of_build,
     parking_facilities,
     image,
   } = home;
-  console.log(gps_location);
   const details_paras = details_desc.split("|");
+  const handleAddToWishList = async(data)=>{
+  //  console.log({...data});
+   try {
+      const docRef = await addDoc(collection(db, `favorite-properties-${user.uid}`), {
+        ...data
+      });
+      toast.success("Data Saved to Firebase Database");
+    } catch (e) {
+      toast.error("Error adding Data");
+    }
+  }
 
   return (
     <div className="mx-3 mb-40">
@@ -159,6 +175,9 @@ const EstateDetails = () => {
               </MapContainer>
             </div>
           </div>
+        </div>
+        <div className="flex justify-start items-center my-5">
+          <button onClick={()=>{handleAddToWishList(home)}} className="btn btn-primary text-white capitalize">add to wishlist</button>
         </div>
       </div>
     </div>

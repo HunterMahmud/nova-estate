@@ -1,11 +1,15 @@
-import { Link, ScrollRestoration } from "react-router-dom";
-import { useForm } from "react-hook-form";
 import contextProvider from "../components/contextProvider";
+import { Link, ScrollRestoration } from "react-router-dom";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { updateProfile } from "firebase/auth";
-import { toast } from "react-toastify";
 import { Helmet } from "react-helmet-async";
+import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
+import { useState } from 'react';
+
 
 const Register = () => {
+  const [showPass, setShowPass] = useState(false);
   const { emailPasswordRegister } = contextProvider();
   const {
     register,
@@ -118,6 +122,7 @@ const Register = () => {
             <label htmlFor="password" className="block text-gray-400">
               Password
             </label>
+            <div className="relative">
             <input
               {...register("password", {
                 required: {
@@ -143,11 +148,13 @@ const Register = () => {
                   },
                 },
               })}
-              type="password"
+              type={showPass?"text":"password"}
               name="password"
               placeholder="Password"
               className="w-full px-4 py-3 rounded-md border-2 border-gray-500 bg-main text-gray-100 focus:border-violet-400"
             />
+             <span className="absolute top-4 right-3" onClick={()=>{setShowPass(!showPass)}}>{showPass?<FaEyeSlash/>:<FaEye/>}</span>
+            </div>
             {errors?.password?.message && (
               <span className="text-red-500">{errors.password.message}</span>
             )}
