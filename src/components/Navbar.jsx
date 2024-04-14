@@ -2,10 +2,12 @@ import { Link, NavLink } from "react-router-dom";
 import contextProvider from "./contextProvider";
 import { toast } from 'react-toastify';
 import './Navbar.css'
+import { useEffect } from "react";
 
 
 const Navbar = () => {
   const { user, logOut } = contextProvider();
+  
   const links = (
     <>
       <li>

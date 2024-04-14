@@ -9,8 +9,13 @@ import contextProvider from "../components/contextProvider";
 import "animate.css";
 import { toast } from "react-toastify";
 import { Helmet } from "react-helmet-async";
+import { useState } from 'react';
+import { FaEye } from 'react-icons/fa';
+import { FaEyeSlash } from 'react-icons/fa';
 
 const Login = () => {
+  
+  const [showPass, setShowPass] = useState(false);
   const {
     register,
     handleSubmit,
@@ -98,19 +103,29 @@ const Login = () => {
               Password
             </label>
 
-            <input
+          <div className="relative">
+          <input
               {...register("password", {
                 required: {
                   value: true,
                   message: "This field is required.",
                 },
               })}
-              type="password"
+              type={showPass?"text":"password"}
               name="password"
               id="password"
               placeholder="Password"
               className="w-full px-4 py-3 rounded-md border-2 border-gray-500 bg-main text-gray-100 focus:border-violet-400"
             />
+            <span
+                className="absolute top-4 right-3 cursor-pointer p-1"
+                onClick={() => {
+                  setShowPass(!showPass);
+                }}
+              >
+                {showPass ? <FaEye /> : <FaEyeSlash />}
+              </span>
+          </div>
 
             {errors?.password?.message && (
               <span className="text-red-500">{errors.password.message}</span>
