@@ -56,7 +56,7 @@ const FavoritesProperties = () => {
       ) : (
         <>
           <h1 className="text-xl md:text-3xl lg:text-5xl font-bold font-poppins text-center my-14  text-gray-100">
-            Featured Properties
+            Wishlist Properties
           </h1>
           <div className="my-8 grid grid-cols-1 max-w-7xl mx-auto md:grid-cols-2 lg:grid-cols-3 gap-5">
             {favorites.map((favorite, i) => (
