@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams, useLoaderData } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { FaLocationDot } from "react-icons/fa6";
@@ -17,6 +17,7 @@ const EstateDetails = () => {
   const { id: pId } = useParams();
   const homes = useLoaderData();
   const {user} = contextProvider();
+  const [favorites, setFavorites] = useState([]);
   // console.log(user.uid);
 
   const home = homes.find((h) => h.id == pId);
@@ -40,7 +41,32 @@ const EstateDetails = () => {
   const details_paras = details_desc.split("|");
   const handleAddToWishList = async(data)=>{
   //  console.log({...data});
-   try {
+  console.log(data);
+  const fetchData = async () => {
+    try {
+      const docRef = collection(db, `favorite-properties-${user.uid}`);
+      const querySnapshot = await getDocs(docRef);
+      const favoritesData = [];
+      querySnapshot.forEach((doc) => {
+      //   console.log(doc);
+        favoritesData.push({ id: doc.id, data: doc.data() });
+      });
+      // console.log(favoritesData);
+      setFavorites(favoritesData);
+    } catch(e){
+      toast.error("Unknown error happened.")
+    }
+  };
+
+  fetchData();
+  console.log(favorites);
+  const alreadyInWishlist = favorites.find((item)=>item?.data?.id==data.id);
+  if(alreadyInWishlist){
+    toast.error("Already in wishlist.");
+  }
+   else{
+    try {
+    
       const docRef = await addDoc(collection(db, `favorite-properties-${user.uid}`), {
         ...data
       });
@@ -48,6 +74,7 @@ const EstateDetails = () => {
     } catch (e) {
       toast.error("Error adding Data");
     }
+   }
   }
 
   return (
