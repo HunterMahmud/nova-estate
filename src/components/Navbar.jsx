@@ -2,7 +2,6 @@ import { Link, NavLink } from "react-router-dom";
 import contextProvider from "./contextProvider";
 import { toast } from 'react-toastify';
 import './Navbar.css'
-import { useEffect } from "react";
 
 
 const Navbar = () => {
@@ -40,6 +39,7 @@ const Navbar = () => {
         toast.error('Logout error happened.')
       });
   };
+
   return (
     <div className="bg-base-100">
       <div className="navbar sm:w-[97%] sm:mx-auto">

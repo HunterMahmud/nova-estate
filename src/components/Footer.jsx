@@ -42,8 +42,6 @@ const Footer = () => {
               
             </ul>
           </div>
-         
-        
           <div className="">
             <div className="uppercase text-gray-50">Social media</div>
             <div className="flex justify-start space-x-2">

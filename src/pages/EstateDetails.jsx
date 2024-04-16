@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { FaLocationDot } from "react-icons/fa6";
 import { ScrollRestoration } from "react-router-dom";
 
-import { collection, addDoc, getDocs ,doc } from "firebase/firestore";
+import { collection, addDoc, getDocs } from "firebase/firestore";
 
 // import { Marker, Popup } from "leaflet";
 import { TileLayer, MapContainer, Marker, Popup } from "react-leaflet";
