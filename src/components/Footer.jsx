@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import { FaMapLocationDot } from "react-icons/fa6";
+import { IoCall } from "react-icons/io5";
 
 const Footer = () => {
   return (
@@ -28,14 +30,14 @@ const Footer = () => {
             <ul className="space-y-4">
               <li>
                 <a className="flex items-center justify-start" href='tel:+8801798120845'>
-                  <img className="w-5 h-5" src="call.png" alt="" />
+                <IoCall/>
                   <span className="ml-1">+8801798120845</span>
                 </a>
               </li>
               
               <li>
                 <a className="flex items-center justify-start" href='https://maps.app.goo.gl/zgBVbuKqGP4kd4AWA'>
-                  <img className="w-5 h-5" src="address.png" alt="" />
+                <FaMapLocationDot/>
                   <span className="ml-1">6000, Rajshahi, BD</span>
                 </a>
               </li>
