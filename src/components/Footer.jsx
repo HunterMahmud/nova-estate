@@ -23,21 +23,18 @@ const Footer = () => {
         </div>
         <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
           <div className="space-y-3">
-            <h3 className="tracking-wide uppercase text-gray-50">Real Estate Services</h3>
+            <h3 className="tracking-wide uppercase text-gray-50">
+              Real Estate Services
+            </h3>
             <ul className="space-y-1">
               <li>
                 <a rel="noopener noreferrer" href="#">
-                  Features
+                  Property Management
                 </a>
               </li>
               <li>
                 <a rel="noopener noreferrer" href="#">
-                  Integrations
-                </a>
-              </li>
-              <li>
-                <a rel="noopener noreferrer" href="#">
-                  Pricing
+                  Rental Services
                 </a>
               </li>
               <li>
@@ -75,7 +72,7 @@ const Footer = () => {
                   className="flex items-center justify-start"
                   href="tel:+8801798120845"
                 >
-                  <IoCall className="text-lg"/>
+                  <IoCall className="text-lg" />
                   <span className="ml-1">+8801798120845</span>
                 </a>
               </li>
@@ -84,11 +81,10 @@ const Footer = () => {
                   className="flex items-center justify-start"
                   href="https://maps.app.goo.gl/zgBVbuKqGP4kd4AWA"
                 >
-                  <FaMapLocationDot className="text-lg"/>
+                  <FaMapLocationDot className="text-lg" />
                   <span className="ml-1">6000, Rajshahi, BD</span>
                 </a>
               </li>
-              
             </ul>
           </div>
           <div className="space-y-3">

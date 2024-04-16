@@ -87,8 +87,10 @@ const EstateDetails = () => {
       </Helmet>
 
       <ScrollRestoration />
-           <div className=" flex items-center justify-center h-[350px] sm:h-[500px] object-cover bg-cover bg-[linear-gradient(45deg,rgba(0,0,0,0.5),rgba(0,0,0,0)),url('https://source.unsplash.com/a-living-room-filled-with-furniture-and-a-large-window-TBJrxAvVx_M')] bg-center bg-no-repeat">
-        <h2 className="text-2xl sm:text-3xl lg:text-5xl font-poppins text-white">{estate_title}</h2>
+      <div className=" flex items-center justify-center h-[350px] sm:h-[500px] object-cover bg-cover bg-[linear-gradient(45deg,rgba(0,0,0,0.5),rgba(0,0,0,0)),url('https://source.unsplash.com/a-living-room-filled-with-furniture-and-a-large-window-TBJrxAvVx_M')] bg-center bg-no-repeat">
+        <h2 className="text-2xl sm:text-3xl lg:text-5xl font-poppins text-white">
+          {estate_title}
+        </h2>
       </div>
 
       <div className="mx-3 mb-40">
@@ -210,7 +212,11 @@ const EstateDetails = () => {
                   Location : <span className="capitalize">{location}</span>
                 </h3>
 
-                <div data-aos="fade-up" data-aos-duration="200" className="w-full max-w-5xl h-[400px] lg:h-[500px] ">
+                <div
+                  data-aos="fade-up"
+                  data-aos-duration="200"
+                  className="w-full max-w-5xl h-[400px] lg:h-[500px] "
+                >
                   <MapContainer
                     center={gps_location}
                     zoom={13}

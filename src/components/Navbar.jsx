@@ -15,6 +15,7 @@ const Navbar = () => {
       <li>
         <NavLink className='text-lg' to="/properties">Properties</NavLink>
       </li>
+      
       {user && (
         <>
         <li>
@@ -26,6 +27,9 @@ const Navbar = () => {
         </>
         
       ) }
+      <li>
+        <NavLink className='text-lg' to="/aboutus">About Us</NavLink>
+      </li>
     </>
   );
   const handleLogOut = () => {

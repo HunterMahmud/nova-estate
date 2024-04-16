@@ -9,6 +9,7 @@ import EstateDetails from '../pages/EstateDetails';
 import ProtectedRoute from './../components/ProtectedRoute';
 import UpdateProfile from './../pages/UpdateProfile';
 import FavoritesProperties from './../pages/FavoritesProperties';
+import AboutUs from '../pages/AboutUs';
 
 const router = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register/>,
+            },
+            {
+                path: '/aboutus',
+                element: <AboutUs/>
             },
             {
                 path:'/properties',
