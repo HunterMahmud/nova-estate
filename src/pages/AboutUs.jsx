@@ -15,7 +15,7 @@ const AboutUs = () => {
 
       <ScrollRestoration />
       <div className=" flex flex-col items-center justify-center h-[300px]  object-cover bg-cover bg-[linear-gradient(45deg,rgba(0,0,0,0.5),rgba(0,0,0,0)),url('https://source.unsplash.com/a-living-room-filled-with-furniture-and-a-large-window-TBJrxAvVx_M')] bg-center bg-no-repeat">
-        <h2 className="text-2xl sm:text-3xl lg:text-5xl font-poppins text-white">
+        <h2 className="text-2xl sm:text-4xl lg:text-5xl font-poppins text-white">
           About Us
         </h2>
         <span className="text-sm text-white text-center">Our Mission</span>
@@ -23,41 +23,41 @@ const AboutUs = () => {
       <div className="mx-2">
         <div className="max-w-7xl mx-auto">
           <div className="my-10">
-            <h2 className="text-2xl mb-3 sm:text-3xl font-poppins text-white text-center">
+            <h2 className="text-2xl mb-3 sm:text-3xl font-poppins text-black font-semibold text-center">
               About Our Company
             </h2>
-            <p className="text-center text-lg">
+            <p className="text-center text-gray-800 text-lg">
               Each apartments has been individually designed to maximise space
               and light. Smart Home Technology installed as standard in each
               apartment putting you in total control of your home at the touch
               of a button from wherever you might be.
             </p>
           </div>
-          <div className="stats text-white shadow w-full">
+          <div className="stats rounded-lg bg-card text-black shadow w-full">
             <div className="stat text-center">
-              <div className="stat-title text-gray-300">Apartment Houses</div>
+              <div className="stat-title text-gray-700">Apartment Houses</div>
               <div className="stat-value">35</div>
             </div>
 
             <div className="stat text-center">
-              <div className="stat-title text-gray-300">Total Houses</div>
+              <div className="stat-title text-gray-700">Total Houses</div>
               <div className="stat-value">2.3k</div>
             </div>
 
             <div className="stat text-center">
-              <div className="stat-title text-gray-300">Happry Customers</div>
+              <div className="stat-title text-gray-700">Happry Customers</div>
               <div className="stat-value">1.3k</div>
             </div>
           </div>
           <div className="my-10">
-            <h2 className="text-2xl mb-7 sm:text-3xl  font-poppins text-white text-center">
+            <h2 className="text-2xl mb-7 sm:text-3xl  font-poppins text-black font-semibold text-center">
               What People Say
             </h2>
             <div className="flex flex-col md:flex-row mx-auto gap-3">
-              <div className="max-w-md mx-auto p-6 overflow-hidden rounded-lg shadow bg-base-100 text-gray-100">
+              <div className="max-w-md mx-auto p-6 overflow-hidden rounded-lg shadow bg-card text-black">
                 <article>
                   <h2 className="text-center text-5xl">"</h2>
-                  <p className=" text-xl text-gray-100">
+                  <p className=" text-xl text-black">
                     "City living at its best! Stylish interiors and vibrant
                     location create a perfect urban retreat."
                   </p>
@@ -65,19 +65,19 @@ const AboutUs = () => {
                     <img
                       src="https://source.unsplash.com/man-wearing-green-polo-shirt-6anudmpILw4"
                       alt=""
-                      className="w-10 h-10 rounded-full bg-gray-500"
+                      className="w-10 h-10 rounded-full bg-card"
                     />
                     <div>
                       <h3 className="text-sm font-medium">Mark Stivens</h3>
-                      <p className="text-sm text-gray-100">NYC</p>
+                      <p className="text-sm text-black">NYC</p>
                     </div>
                   </div>
                 </article>
               </div>
-              <div className="max-w-md mx-auto p-6 overflow-hidden rounded-lg shadow bg-base-100 text-gray-100">
+              <div className="max-w-md mx-auto p-6 overflow-hidden rounded-lg shadow bg-card text-black">
                 <article>
                   <h2 className="text-center text-5xl">"</h2>
-                  <p className=" text-xl text-gray-100">
+                  <p className=" text-xl text-black">
                     "Sleek design, prime location, and upscale features make
                     city living a luxury experience."
                   </p>
@@ -85,19 +85,19 @@ const AboutUs = () => {
                     <img
                       src="https://source.unsplash.com/man-wearing-black-and-white-top-7omHUGhhmZ0"
                       alt=""
-                      className="w-10 h-10 rounded-full bg-gray-500"
+                      className="w-10 h-10 rounded-full bg-card"
                     />
                     <div>
                       <h3 className="text-sm font-medium">Michael Green</h3>
-                      <p className="text-sm text-gray-100">Los Angeles</p>
+                      <p className="text-sm text-black">Los Angeles</p>
                     </div>
                   </div>
                 </article>
               </div>
-              <div className="max-w-md mx-auto p-6 overflow-hidden rounded-lg shadow bg-base-100 text-gray-100">
+              <div className="max-w-md mx-auto p-6 overflow-hidden rounded-lg shadow bg-card text-black">
                 <article>
                   <h2 className="text-center text-5xl">"</h2>
-                  <p className=" text-xl text-gray-100">
+                  <p className=" text-xl text-black">
                     "Perfect suburban retreat, spacious layout and nearby
                     amenities make family life a joy."
                   </p>
@@ -105,18 +105,18 @@ const AboutUs = () => {
                     <img
                       src="https://source.unsplash.com/a-man-in-a-yellow-shirt-smiling-at-the-camera-ZjDbRtR_BcE"
                       alt=""
-                      className="w-10 h-10 rounded-full bg-gray-500"
+                      className="w-10 h-10 rounded-full bg-card"
                     />
                     <div>
                       <h3 className="text-sm font-medium">Wendy Moore</h3>
-                      <p className="text-sm text-gray-100">Washington</p>
+                      <p className="text-sm text-black">Washington</p>
                     </div>
                   </div>
                 </article>
               </div>
             </div>
           </div>
-          <section className="py-6 bg-base-100 my-10 text-gray-50">
+          <section className="py-6 rounded-lg bg-card my-10 text-black">
             <div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
               <div className="py-6 md:py-0 md:px-6">
                 <h1 className="text-4xl font-bold">Get in touch</h1>
@@ -174,7 +174,8 @@ const AboutUs = () => {
                     type="text"
                     required={true}
                     placeholder="Bill Gates"
-                    className="block w-full p-2 rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:ring-violet-400 bg-gray-800"
+                    
+                    className="block w-full p-2 placeholder:text-gray-600 rounded-md shadow-sm  bg-gray-100 border border-gray-600 "
                   />
                 </label>
                 <label className="block">
@@ -183,7 +184,7 @@ const AboutUs = () => {
                     type="email"
                     required={true}
                     placeholder="bill@gates.com"
-                    className="block w-full p-2 rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:ring-violet-400 bg-gray-800"
+                    className="block w-full p-2 placeholder:text-gray-600 rounded-md shadow-sm  bg-gray-100 border border-gray-600 "
                   />
                 </label>
                 <label className="block">
@@ -192,14 +193,14 @@ const AboutUs = () => {
                   required={true}
                     rows="3"
                     placeholder="Your message"
-                    className="block w-full p-2 rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 bg-gray-800"
+                    className="block w-full p-2 placeholder:text-gray-600 rounded-md shadow-sm  bg-gray-100 border border-gray-600 "
                   ></textarea>
                 </label>
                 <input
                   type="submit"
                   value={'Submit'}
                   onClick={handleSubmit}
-                  className="self-center px-8 py-3 text-lg rounded focus:ring hover:ring focus:ring-opacity-75 bg-violet-400 text-gray-900 focus:ring-violet-400 hover:ring-violet-400"
+                  className="self-center px-8 py-3 text-lg rounded font-poppins font-bold text-white hover:cursor-pointer  bg-violet-500"
                 />
                  
               </form>

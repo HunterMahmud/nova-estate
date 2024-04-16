@@ -87,7 +87,7 @@ const EstateDetails = () => {
       </Helmet>
 
       <ScrollRestoration />
-      <div className=" flex items-center justify-center h-[350px] sm:h-[500px] object-cover bg-cover bg-[linear-gradient(45deg,rgba(0,0,0,0.5),rgba(0,0,0,0)),url('https://source.unsplash.com/a-living-room-filled-with-furniture-and-a-large-window-TBJrxAvVx_M')] bg-center bg-no-repeat">
+      <div className=" flex items-center justify-center h-[150px] sm:h-[300px] object-cover bg-cover bg-[linear-gradient(45deg,rgba(0,0,0,0.5),rgba(0,0,0,0)),url('https://source.unsplash.com/a-living-room-filled-with-furniture-and-a-large-window-TBJrxAvVx_M')] bg-center bg-no-repeat">
         <h2 className="text-2xl sm:text-3xl lg:text-5xl font-poppins text-white">
           {estate_title}
         </h2>
@@ -103,12 +103,12 @@ const EstateDetails = () => {
                 className="lg:w-[60%]"
               >
                 <div className="title-and-text">
-                  <h1 className="text-3xl text-gray-200">
-                    {estate_title} ( For{" "}
-                    <span className="capitalize">{status} )</span>
+                  <h1 className="text-3xl text-black font-bold font-poppins">
+                    {estate_title} (For{" "}
+                    <span className="capitalize">{status})</span>
                   </h1>
 
-                  <p className="flex items-center text-sm gap-2 my-2">
+                  <p className="flex items-center text-gray-600 text-sm gap-2 my-2">
                     <span>
                       {" "}
                       <FaLocationDot />{" "}
@@ -132,11 +132,11 @@ const EstateDetails = () => {
                 data-aos-duration="800"
                 className="details-container mt-5 w-full lg:w-[40%]"
               >
-                <h3 className="text-2xl text-gray-200 uppercase font-poppins">
+                <h3 className="text-2xl text-black uppercase font-poppins">
                   Property Details
                 </h3>
                 {/* table */}
-                <div className="bg-gray-600 text-gray-200 rounded-md mt-5 w-full font-bold font-poppins">
+                <div className="bg-card text-gray-800 rounded-md mt-5 w-full font-bold font-poppins">
                   <div className="overflow-x-auto">
                     <table className="table">
                       <tbody>
@@ -192,7 +192,7 @@ const EstateDetails = () => {
                 <h3
                   data-aos="fade-up"
                   data-aos-duration="500"
-                  className="text-2xl text-gray-200 mt-10 uppercase font-poppins"
+                  className="text-2xl text-black font-bold  mt-10 uppercase font-poppins"
                 >
                   Descriptions
                 </h3>
@@ -200,7 +200,7 @@ const EstateDetails = () => {
                   <p
                     data-aos="fade-up"
                     data-aos-duration="200"
-                    className="py-2 font-poppins text-gray-300"
+                    className="py-2 font-poppins text-gray-800"
                     key={i}
                   >
                     {para}
@@ -208,7 +208,7 @@ const EstateDetails = () => {
                 ))}
               </div>
               <div data-aos="fade-up" data-aos-duration="200">
-                <h3 className="text-2xl text-gray-200 mt-10 uppercase font-poppins mb-5">
+                <h3 className="text-2xl text-gray-700 font-bold mt-10 uppercase font-poppins mb-5">
                   Location : <span className="capitalize">{location}</span>
                 </h3>
 

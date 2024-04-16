@@ -14,10 +14,10 @@ const EstatePage = () => {
         </Helmet>
       )}
      
-      <h1 className="text-xl md:text-3xl lg:text-5xl font-bold font-poppins text-center mt-14 my-3 text-gray-100">
+      <h1 className="text-3xl lg:text-5xl font-bold font-poppins text-center mt-14 my-3 text-gray-900">
         Featured Properties
       </h1>
-      <p className="text-base font-poppins text-center mb-14 text-gray-100">Explore your dream home for sale or discover comfortable rental options tailored to your lifestyle.</p>
+      <p className="text-base font-poppins text-center mb-14 text-gray-800">Explore your dream home for sale or discover comfortable rental options tailored to your lifestyle.</p>
       
       <EstateSection homes={homes}></EstateSection>
     </div>

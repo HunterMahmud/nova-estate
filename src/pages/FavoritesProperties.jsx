@@ -51,11 +51,11 @@ const FavoritesProperties = () => {
 
       {favorites.length == 0 ? (
         <div className="w-full min-h-[calc(100vh-349px)] flex items-center justify-center">
-          <h1 className="text-3xl">No Data in Wishlist</h1>
+          <h1 className="text-3xl text-gray-800">No Data in Wishlist</h1>
         </div>
       ) : (
         <>
-          <h1 className="text-xl md:text-3xl lg:text-5xl font-bold font-poppins text-center my-14  text-gray-100">
+          <h1 className="text-xl md:text-3xl lg:text-5xl font-bold font-poppins text-center my-14  text-gray-900">
             Wishlist Properties
           </h1>
           <div className="my-8 grid grid-cols-1 max-w-7xl mx-auto md:grid-cols-2 lg:grid-cols-3 gap-5">

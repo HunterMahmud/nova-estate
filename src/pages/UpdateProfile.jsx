@@ -54,7 +54,7 @@ const UpdateProfile = () => {
         toast.error("Can't Update. Error occured.");
       });
   };
-
+ 
   // console.log(user);
   return (
     <div className="mx-2">
@@ -62,11 +62,11 @@ const UpdateProfile = () => {
         <title>Update Profile | Nova Estate</title>
       </Helmet>
       <div className="max-w-7xl mx-auto">
-        <div className="bg-main rounded-md lg:col-span-1 flex flex-col items-center justify-center  my-10  p-8 text-gray-100">
+        <div className="bg-main rounded-md lg:col-span-1 flex flex-col items-center justify-center  my-10  p-8 text-black">
           <img
             src={photoURL}
             alt={displayName}
-            className="object-center w-40 h-40 mb-6 rounded-full"
+            className="object-center w-40 h-40 mb-6 border border-solid border-blue-300 rounded-full"
           />
           <div className="flex flex-col items-center justify-center space-y-4">
             <div>
@@ -87,7 +87,7 @@ const UpdateProfile = () => {
                     d="M274.6,25.623a32.006,32.006,0,0,0-37.2,0L16,183.766V496H496V183.766ZM464,402.693,339.97,322.96,464,226.492ZM256,51.662,454.429,193.4,311.434,304.615,256,268.979l-55.434,35.636L57.571,193.4ZM48,226.492,172.03,322.96,48,402.693ZM464,464H48V440.735L256,307.021,464,440.735Z"
                   ></path>
                 </svg>
-                <span className="text-gray-400">
+                <span>
                   {email || "Email not found"}
                 </span>
               </span>
@@ -95,7 +95,7 @@ const UpdateProfile = () => {
           </div>
         </div>
         <div>
-          <section className="p-6 my-10 lg:col-span-3 rounded-md bg-main text-gray-50">
+          <section className="p-6 my-10 lg:col-span-3 rounded-md text-black bg-gray-200">
             <form
               onSubmit={handleSubmit(onSubmitEdit)}
               className="container flex flex-col mx-auto "
@@ -115,7 +115,7 @@ const UpdateProfile = () => {
                       type="text"
                       required={true}
                       placeholder="Name"
-                      className="w-full p-2 rounded-md focus:ring focus:ring-opacity-75 text-gray-100  border-gray-700"
+                      className="w-full rounded-md p-2 focus:ring focus:ring-opacity-75 text-black bg-gray-200 border-2 border-gray-400"
                     />
                   </div>
                   <div className="col-span-full sm:col-span-3">
@@ -128,7 +128,7 @@ const UpdateProfile = () => {
                       type="email"
                       disabled={true}
                       placeholder="Email"
-                      className="w-full p-2 disabled:cursor-not-allowed  rounded-md focus:ring focus:ring-opacity-75 text-gray-500  border-gray-700"
+                      className="w-full p-2 disabled:cursor-not-allowed  rounded-md focus:ring focus:ring-opacity-75  text-gray-400 border border-gray-300  "
                     />
                   </div>
 
@@ -142,7 +142,7 @@ const UpdateProfile = () => {
                       type="text"
                       required={true}
                       placeholder="Photo URL"
-                      className="w-full rounded-md p-2 focus:ring focus:ring-opacity-75 text-gray-100  border-gray-700"
+                      className="w-full rounded-md p-2 focus:ring focus:ring-opacity-75 text-black bg-gray-200 border-2 border-gray-400"
                     />
                   </div>
                 </div>
@@ -151,7 +151,7 @@ const UpdateProfile = () => {
                 <button
                   disabled={!isDirty}
                   
-                  className="p-2 rounded-md text-gray-100 bg-violet-500 disabled:bg-gray-500 disabled:text-gray-400 disabled:cursor-not-allowed"
+                  className="p-2 rounded-md text-gray-100 bg-violet-500 disabled:bg-violet-300 disabled:text-gray-400 disabled:cursor-not-allowed"
                 >
                   Save Changes
                 </button>

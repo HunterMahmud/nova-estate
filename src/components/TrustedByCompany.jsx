@@ -3,13 +3,13 @@ import React from "react";
 const TrustedByCompany = () => {
   return (
     <div className="mx-2">
-      <section className="max-w-7xl mx-auto rounded-xl p-6 my-10 bg-gray-800 text-gray-100">
+      <section className="max-w-7xl mx-auto rounded-xl p-6 my-10 bg-card text-black">
         <div className="container p-4 mx-auto text-center">
-          <h2 className="text-4xl font-bold">
+          <h2 className="text-3xl lg:text-4xl font-bold">
             Trusted by Company
           </h2>
         </div>
-        <div className="container flex flex-wrap justify-center mx-auto text-gray-400">
+        <div className="container flex flex-wrap justify-center mx-auto">
           <div className="flex justify-center text-2xl md:text-3xl w-1/2 p-6 align-middle md:w-1/3 xl:w-1/4">
           <img className="w-[100px] h-[70px]" src="https://atlantaagentmagazine.com/wp-content/uploads/sites/6/2018/07/Redfin-logo.png" alt="" />
           

@@ -13,16 +13,16 @@ import { Link } from "react-router-dom";
 
 const SmartHourseGallery = () => {
   return (
-    <div className="mx-2">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row text-center lg:text-left">
+    <div className="mx-2 my-16">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row text-center lg:text-left text-black ">
         <div className="p-3">
-          <h2 className="text-4xl">Introducing a New Smart House</h2>
-          <p className="text-lg mt-8">
+          <h2 className="text-3xl lg:text-4xl font-semibold">Introducing a New Smart House</h2>
+          <p className="md:text-lg mt-8 text-gray-800">
             You are welcome to check out our house gallery to make sure that all
             apartments are in prime condition which makes them a perfect living
             space.
           </p>
-          <Link to='/properties' className="btn btn-primary bg-violet-500 mt-5">Learn More</Link>
+          <Link to='/properties' className="btn btn-primary bg-violet-500 text-white mt-5">Learn More</Link>
         </div>
         <div className="lg:mx-3">
           <Swiper

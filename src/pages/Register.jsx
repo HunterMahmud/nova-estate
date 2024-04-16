@@ -53,12 +53,12 @@ const Register = () => {
       <ScrollRestoration />
       <div
         data-aos="zoom-in"
-        className="w-full mb-9 border border-gray-100/25 max-w-md mx-auto mt-12 p-8 space-y-3 rounded-xl bg-main text-gray-100"
+        className="w-full mb-9 border border-gray-100/25 max-w-md mx-auto mt-12 p-8 space-y-3 rounded-xl bg-main text-gray-800"
       >
-        <h1 className="text-2xl font-bold text-center">Register Now!</h1>
+        <h1 className="text-2xl font-bold text-center text-black">Register Now!</h1>
         <form onSubmit={handleSubmit(onSubmitRegister)} className="space-y-6">
           <div className="space-y-1 text-sm">
-            <label htmlFor="username" className="block text-gray-400">
+            <label htmlFor="username" className="block text-gray-800">
               Name
             </label>
             <input
@@ -71,14 +71,14 @@ const Register = () => {
               type="text"
               name="name"
               placeholder="Name"
-              className="w-full px-4 py-3 rounded-md border-2 border-gray-500 bg-main text-gray-100 focus:border-violet-400"
+              className="w-full px-4 py-3 rounded-md border-2 border-gray-500 bg-main text-gray-800 focus:border-violet-400 bg-transparent appearance-none"
             />
             {errors?.name?.message && (
               <span className="text-red-500">{errors.name.message}</span>
             )}
           </div>
           <div className="space-y-1 text-sm">
-            <label htmlFor="username" className="block text-gray-400">
+            <label htmlFor="username" className="block text-gray-800">
               Photo URL
             </label>
             <input
@@ -95,14 +95,14 @@ const Register = () => {
               type="text"
               name="photoURL"
               placeholder="Photo URL"
-              className="w-full px-4 py-3 rounded-md border-2 border-gray-500 bg-main text-gray-100 focus:border-violet-400"
+              className="w-full px-4 py-3 rounded-md border-2 border-gray-500 bg-main text-gray-800 focus:border-violet-400 bg-transparent appearance-none"
             />
             {errors?.photoURL?.message && (
               <span className="text-red-500">{errors.photoURL.message}</span>
             )}
           </div>
           <div className="space-y-1 text-sm">
-            <label htmlFor="username" className="block text-gray-400">
+            <label htmlFor="username" className="block text-gray-800">
               Email
             </label>
             <input
@@ -115,14 +115,14 @@ const Register = () => {
               type="email"
               name="email"
               placeholder="Email"
-              className="w-full px-4 py-3 rounded-md border-2 border-gray-500 bg-main text-gray-100 focus:border-violet-400"
+              className="w-full px-4 py-3 rounded-md border-2 border-gray-500 bg-main text-gray-800 focus:border-violet-400"
             />
             {errors?.email?.message && (
               <span className="text-red-500">{errors.email.message}</span>
             )}
           </div>
           <div className="space-y-1 text-sm">
-            <label htmlFor="password" className="block text-gray-400">
+            <label htmlFor="password" className="block text-gray-800">
               Password
             </label>
             <div className="relative">
@@ -154,7 +154,7 @@ const Register = () => {
                 type={showPass ? "text" : "password"}
                 name="password"
                 placeholder="Password"
-                className="w-full px-4 py-3 rounded-md border-2 border-gray-500 bg-main text-gray-100 focus:border-violet-400"
+                className="w-full px-4 py-3 rounded-md border-2 border-gray-500 bg-main text-gray-800 focus:border-violet-400"
               />
               <span
                 className="absolute top-4 right-3 cursor-pointer p-1"
@@ -169,13 +169,13 @@ const Register = () => {
               <span className="text-red-500">{errors.password.message}</span>
             )}
           </div>
-          <button className="block w-full p-3 text-center rounded-sm text-black  bg-violet-500">
+          <button className="block w-full p-3 text-center rounded-sm text-white font-bold  bg-violet-500">
             Register
           </button>
         </form>
-        <p className="text-sm text-center sm:px-6 text-gray-400">
+        <p className="text-sm text-center sm:px-6 text-gray-800">
           Have an account?
-          <Link to="/login" className="underline text-gray-100 ml-2">
+          <Link to="/login" className="underline font-bold text-gray-800 ml-2">
             Login
           </Link>
         </p>

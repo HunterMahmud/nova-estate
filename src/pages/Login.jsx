@@ -74,12 +74,12 @@ const Login = () => {
       <ScrollRestoration />
       <div
         data-aos="zoom-in"
-        className="w-full mb-9 max-w-md mx-auto mt-12 p-8 space-y-3 rounded-xl border border-gray-100/25 bg-main text-gray-100 shadow-lg"
+        className="w-full mb-9 max-w-md mx-auto mt-12 p-8 space-y-3 rounded-xl border border-gray-100/25 bg-card text-gray-100 shadow-lg"
       >
-        <h1 className="text-2xl font-bold text-center ">Login</h1>
+        <h1 className="text-2xl font-bold text-center text-black">Login</h1>
         <form onSubmit={handleSubmit(onSubmitLogin)} className="space-y-6">
           <div className="space-y-1 text-sm">
-            <label htmlFor="email" className="block text-gray-400">
+            <label htmlFor="email" className="block text-gray-800">
               Email
             </label>
             <input
@@ -92,14 +92,14 @@ const Login = () => {
               type="email"
               name="email"
               placeholder="Email"
-              className="w-full px-4 py-3 rounded-md border-2 border-gray-500 bg-main text-gray-100 focus:border-violet-400"
+              className="w-full px-4 py-3 rounded-md border-2 border-gray-500 bg-main text-gray-800 focus:border-violet-100"
             />
             {errors?.email?.message && (
               <span className="text-red-500">{errors.email.message}</span>
             )}
           </div>
           <div className="space-y-1 text-sm">
-            <label htmlFor="password" className="block text-gray-400">
+            <label htmlFor="password" className="block text-gray-800">
               Password
             </label>
 
@@ -115,10 +115,10 @@ const Login = () => {
               name="password"
               id="password"
               placeholder="Password"
-              className="w-full px-4 py-3 rounded-md border-2 border-gray-500 bg-main text-gray-100 focus:border-violet-400"
+              className="w-full px-4 py-3 rounded-md border-2 border-gray-500 bg-main text-gray-800 focus:border-violet-100"
             />
             <span
-                className="absolute top-4 right-3 cursor-pointer p-1"
+                className="absolute top-4 right-3 text-black cursor-pointer p-1"
                 onClick={() => {
                   setShowPass(!showPass);
                 }}
@@ -135,13 +135,13 @@ const Login = () => {
               <Link className="underline">Forgot Password?</Link>
             </div> */}
           </div>
-          <button className="block w-full p-3 text-center rounded-sm text-black bg-violet-500">
+          <button className="block w-full p-3 text-center rounded-sm text-white font-bold bg-violet-500">
             Login
           </button>
         </form>
         <div className="flex items-center pt-4 space-x-1">
           <div className="flex-1 h-px sm:w-16 bg-gray-700"></div>
-          <p className="px-3 text-sm text-gray-400">
+          <p className="px-3 text-sm text-gray-800">
             Login with social accounts
           </p>
           <div className="flex-1 h-px sm:w-16 bg-gray-700"></div>
@@ -150,7 +150,7 @@ const Login = () => {
           <button
             onClick={handleLoginWithGoogle}
             title="Log in with Google"
-            className="p-3 rounded-sm"
+            className="p-3 rounded-sm text-black"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -172,7 +172,7 @@ const Login = () => {
           <button
             onClick={handleLoginWithGithub}
             title="Log in with GitHub"
-            className="p-3 rounded-sm"
+            className="p-3 rounded-sm text-black"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -183,9 +183,9 @@ const Login = () => {
             </svg>
           </button>
         </div>
-        <p className="text-sm text-center sm:px-6 text-gray-400">
+        <p className="text-sm text-center sm:px-6 text-gray-800">
           Don't have an account?
-          <Link to="/register" className="underline text-gray-100 ml-2">
+          <Link to="/register" className="underline text-gray-700 font-bold ml-2">
             Register
           </Link>
         </p>

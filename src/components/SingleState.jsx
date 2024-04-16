@@ -21,14 +21,14 @@ const SingleState = ({ home }) => {
   } = home;
   return (
     <div data-aos="fade-up" className="mx-2">
-      <div className="flex flex-col max-w-sm mx-auto space-y-6 overflow-hidden rounded-md border border-gray-100/25 hover:shadow-[20px,20px,20px,5px,rgba(255,255,255,0.01)] shadow-xl bg-main text-gray-100">
+      <div className="flex flex-col max-w-sm mx-auto space-y-6 overflow-hidden rounded-md border border-gray-100/25 hover:shadow-[20px,20px,20px,5px,rgba(255,255,255,0.01)] shadow-xl bg-main text-black">
         <div>
           {/* image container starts */}
           <div className="overflow-hidden relative w-full h-60">
           <img
             src={image}
             alt={estate_title}
-            className="object-cover w-full h-60 transition-transform  duration-1000 transform hover:scale-125 bg-gray-500"
+            className="object-cover w-full h-60 transition-transform  duration-1000 transform hover:scale-125 bg-white"
           />
           </div>
           {/* image container ends */}
@@ -52,7 +52,7 @@ const SingleState = ({ home }) => {
               <h2 className="mb-1 text-xl font-semibold">
                 {estate_title}
               </h2>
-              <p className="text-sm text-gray-400">{short_desc}</p>
+              <p className="text-sm text-black">{short_desc}</p>
             </div>
             <div className="flex flex-wrap justify-between mt-5">
               <div className="flex flex-col gap-3">
@@ -79,7 +79,7 @@ const SingleState = ({ home }) => {
             <div className="mt-3 w-full">
               <Link
                 to={`/properties/${id}`}
-                className="btn w-full btn-primary bg-violet-500"
+                className="btn w-full text-white btn-primary bg-violet-500"
               >
                 View Property
               </Link>

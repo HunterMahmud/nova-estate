@@ -45,7 +45,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="bg-base-100">
+    <div className="text-black bg-card">
       <div className="navbar sm:w-[97%] sm:mx-auto">
       <div className="navbar-start">
         <div className="dropdown">
@@ -72,7 +72,7 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <Link to="/" className="btn btn-ghost text-xl md:text-2xl lg:text-3xl hover:bg-violet-500  text-white -ml-3 md:ml-3 px-1 md:px-3">
+        <Link to="/" className="btn btn-ghost text-xl md:text-2xl lg:text-3xl hover:bg-violet-500  text-black -ml-3 md:ml-3 px-1 md:px-3">
           Nova Estate
         </Link>
       </div>
