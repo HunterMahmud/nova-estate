@@ -41,7 +41,7 @@ const EstateDetails = () => {
   const details_paras = details_desc.split("|");
   const handleAddToWishList = async (data) => {
     //  console.log({...data});
-    console.log(data);
+    // console.log(data);
     const fetchData = async () => {
       try {
         const docRef = collection(db, `favorite-properties-${user.uid}`);
@@ -98,7 +98,7 @@ const EstateDetails = () => {
               <div
                 data-aos="fade-up"
                 data-aos-duration="1000"
-                className="lg:w-1/2"
+                className="lg:w-[60%]"
               >
                 <div className="title-and-text">
                   <h1 className="text-3xl text-gray-200">
@@ -128,7 +128,7 @@ const EstateDetails = () => {
               <div
                 data-aos="fade-up"
                 data-aos-duration="800"
-                className="details-container mt-5 w-full lg:w-1/2"
+                className="details-container mt-5 w-full lg:w-[40%]"
               >
                 <h3 className="text-2xl text-gray-200 uppercase font-poppins">
                   Property Details
@@ -210,7 +210,7 @@ const EstateDetails = () => {
                   Location : <span className="capitalize">{location}</span>
                 </h3>
 
-                <div className="w-full max-w-5xl h-[400px] lg:h-[500px] ">
+                <div data-aos="fade-up" data-aos-duration="200" className="w-full max-w-5xl h-[400px] lg:h-[500px] ">
                   <MapContainer
                     center={gps_location}
                     zoom={13}

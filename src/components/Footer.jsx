@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { FaMapLocationDot } from "react-icons/fa6";
 import { IoCall } from "react-icons/io5";
 
@@ -7,12 +7,9 @@ const Footer = () => {
   return (
     <footer className="px-4 divide-y bg-base-100 text-gray-100">
       <div className="container max-w-7xl flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
-        <div className="">
-          <Link
-            to="/"
-            className="flex justify-center lg:justify-start"
-          >
-            <div className="flex items-center justify-center w-14 h-14 rounded-full bg-violet-400">
+        <div className="lg:w-1/3">
+          <Link to="/" className="flex justify-center lg:justify-start">
+            <div className="flex items-center justify-center w-14 h-14 rounded-full bg-violet-400 mx-2">
               <img
                 className="rounded-full"
                 src="https://i.ibb.co/n1cFnnS/nova-state.jpg"
@@ -24,29 +21,79 @@ const Footer = () => {
             </span>
           </Link>
         </div>
-        <div className="flex  justify-between lg:space-x-24 text-sm gap-x-3 gap-y-8  ">
-          <div className="">
-            <h3 className="mb-2 uppercase text-gray-50">Contact Us</h3>
-            <ul className="space-y-4">
+        <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
+          <div className="space-y-3">
+            <h3 className="tracking-wide uppercase text-gray-50">Real Estate Services</h3>
+            <ul className="space-y-1">
               <li>
-                <a className="flex items-center justify-start" href='tel:+8801798120845'>
-                <IoCall/>
+                <a rel="noopener noreferrer" href="#">
+                  Features
+                </a>
+              </li>
+              <li>
+                <a rel="noopener noreferrer" href="#">
+                  Integrations
+                </a>
+              </li>
+              <li>
+                <a rel="noopener noreferrer" href="#">
+                  Pricing
+                </a>
+              </li>
+              <li>
+                <a rel="noopener noreferrer" href="#">
+                  FAQ
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div className="space-y-3">
+            <h3 className="tracking-wide uppercase text-gray-50">Company</h3>
+            <ul className="space-y-1">
+              <li>
+                <a rel="noopener noreferrer" href="#">
+                  Privacy
+                </a>
+              </li>
+              <li>
+                <a rel="noopener noreferrer" href="#">
+                  Terms of Service
+                </a>
+              </li>
+              <li>
+                <a rel="noopener noreferrer" href="#">
+                  About Us
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div className="space-y-3">
+            <h3 className="uppercase text-gray-50">Contact Us</h3>
+            <ul className="space-y-1">
+              <li>
+                <a
+                  className="flex items-center justify-start"
+                  href="tel:+8801798120845"
+                >
+                  <IoCall className="text-lg"/>
                   <span className="ml-1">+8801798120845</span>
                 </a>
               </li>
-              
               <li>
-                <a className="flex items-center justify-start" href='https://maps.app.goo.gl/zgBVbuKqGP4kd4AWA'>
-                <FaMapLocationDot/>
+                <a
+                  className="flex items-center justify-start"
+                  href="https://maps.app.goo.gl/zgBVbuKqGP4kd4AWA"
+                >
+                  <FaMapLocationDot className="text-lg"/>
                   <span className="ml-1">6000, Rajshahi, BD</span>
                 </a>
               </li>
               
             </ul>
           </div>
-          <div className="">
+          <div className="space-y-3">
             <div className="uppercase text-gray-50">Social media</div>
-            <div className="flex justify-start space-x-2">
+            <div className="flex justify-start space-x-3">
               <a
                 href="https://www.facebook.com/hasan.almahmud.101"
                 title="Facebook"
@@ -62,7 +109,7 @@ const Footer = () => {
                   <path d="M32 16c0-8.839-7.167-16-16-16-8.839 0-16 7.161-16 16 0 7.984 5.849 14.604 13.5 15.803v-11.177h-4.063v-4.625h4.063v-3.527c0-4.009 2.385-6.223 6.041-6.223 1.751 0 3.584 0.312 3.584 0.312v3.937h-2.021c-1.984 0-2.604 1.235-2.604 2.5v3h4.437l-0.713 4.625h-3.724v11.177c7.645-1.199 13.5-7.819 13.5-15.803z"></path>
                 </svg>
               </a>
-             
+
               <a
                 href="https://github.com/HunterMahmud"
                 title="Github"
@@ -83,7 +130,14 @@ const Footer = () => {
                 target="_blank"
                 className="flex items-center p-1"
               >
-                <svg className="w-7 h-7 fill-current" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><path d="M15,3c-6.627,0 -12,5.373 -12,12c0,6.627 5.373,12 12,12c6.627,0 12,-5.373 12,-12c0,-6.627 -5.373,-12 -12,-12zM10.496,8.403c0.842,0 1.403,0.561 1.403,1.309c0,0.748 -0.561,1.309 -1.496,1.309c-0.842,0.001 -1.403,-0.561 -1.403,-1.309c0,-0.748 0.561,-1.309 1.496,-1.309zM12,20h-3v-8h3zM22,20h-2.824v-4.372c0,-1.209 -0.753,-1.488 -1.035,-1.488c-0.282,0 -1.224,0.186 -1.224,1.488c0,0.186 0,4.372 0,4.372h-2.917v-8h2.918v1.116c0.376,-0.651 1.129,-1.116 2.541,-1.116c1.412,0 2.541,1.116 2.541,3.628z"></path></svg>
+                <svg
+                  className="w-7 h-7 fill-current"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlnsXlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 32 32"
+                >
+                  <path d="M15,3c-6.627,0 -12,5.373 -12,12c0,6.627 5.373,12 12,12c6.627,0 12,-5.373 12,-12c0,-6.627 -5.373,-12 -12,-12zM10.496,8.403c0.842,0 1.403,0.561 1.403,1.309c0,0.748 -0.561,1.309 -1.496,1.309c-0.842,0.001 -1.403,-0.561 -1.403,-1.309c0,-0.748 0.561,-1.309 1.496,-1.309zM12,20h-3v-8h3zM22,20h-2.824v-4.372c0,-1.209 -0.753,-1.488 -1.035,-1.488c-0.282,0 -1.224,0.186 -1.224,1.488c0,0.186 0,4.372 0,4.372h-2.917v-8h2.918v1.116c0.376,-0.651 1.129,-1.116 2.541,-1.116c1.412,0 2.541,1.116 2.541,3.628z"></path>
+                </svg>
               </a>
             </div>
           </div>
