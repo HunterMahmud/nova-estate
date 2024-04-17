@@ -23,7 +23,7 @@ const Footer = () => {
         </div>
         <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
           <div className="space-y-3">
-            <h3 className="tracking-wide font-semibold uppercase text-gray-50">
+            <h3 className="tracking-wide font-bugrasimo font-semibold uppercase text-gray-50">
               Real Estate Services
             </h3>
             <ul className="space-y-1">
@@ -45,7 +45,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="space-y-3">
-            <h3 className="tracking-wide uppercase text-gray-50 font-semibold">Company</h3>
+            <h3 className="tracking-wide uppercase font-bugrasimo text-gray-50 font-semibold">Company</h3>
             <ul className="space-y-1">
               <li>
                 <a rel="noopener noreferrer" href="#">
@@ -65,7 +65,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="space-y-3">
-            <h3 className="uppercase font-semibold text-gray-50">Contact Us</h3>
+            <h3 className="uppercase font-semibold text-gray-50 font-bugrasimo">Contact Us</h3>
             <ul className="space-y-1">
               <li>
                 <a
@@ -88,7 +88,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="space-y-3">
-            <div className="uppercase font-semibold text-gray-50">Social media</div>
+            <div className="uppercase font-semibold text-gray-50 font-bugrasimo">Social media</div>
             <div className="flex justify-start space-x-3">
               <a
                 href="https://www.facebook.com/hasan.almahmud.101"

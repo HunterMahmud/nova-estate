@@ -4,26 +4,27 @@ import { ScrollRestoration } from "react-router-dom";
 import { collection, addDoc } from "firebase/firestore";
 import { toast } from "react-toastify";
 
+import { TileLayer, MapContainer, Marker, Popup } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+
 import { db } from "./../Firebase/firebase.config";
 
-
-
 const AboutUs = () => {
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const name = e.target.name.value;
     const message = e.target.message.value;
     // console.log(email, name , message);
     try {
-      const docRef = await addDoc(collection(db, 'contacts'), {
+      const docRef = await addDoc(collection(db, "contacts"), {
         email,
         name,
-        message
+        message,
       });
-  
+
       // console.log('Document written with ID: ', docRef.id);
-      toast.success('Data saved to firebase.');
+      toast.success("Data saved to firebase.");
       e.target.reset();
     } catch (error) {
       toast.error("Error occured!");
@@ -37,18 +38,35 @@ const AboutUs = () => {
 
       <ScrollRestoration />
       <div className=" flex flex-col items-center justify-center h-[300px]  object-cover bg-cover bg-[linear-gradient(45deg,rgba(0,0,0,0.5),rgba(0,0,0,0)),url('https://source.unsplash.com/a-living-room-filled-with-furniture-and-a-large-window-TBJrxAvVx_M')] bg-center bg-no-repeat">
-        <h2 data-aos="fade-down" className="text-2xl sm:text-4xl lg:text-5xl font-poppins text-white">
+        <h2
+          data-aos="fade-down"
+          className="text-2xl sm:text-4xl lg:text-5xl font-poppins text-white"
+        >
           About Us
         </h2>
-        <span data-aos="fade-up" data-aos-delay={100} className="text-sm text-white text-center">Our Mission</span>
+        <span
+          data-aos="fade-up"
+          data-aos-delay={100}
+          className="text-sm text-white text-center"
+        >
+          Our Mission
+        </span>
       </div>
       <div className="mx-2">
         <div className="max-w-7xl mx-auto">
           <div className="my-10">
-            <h2 data-aos="fade-up" data-aos-delay={100} className="text-2xl mb-3 sm:text-3xl font-poppins text-black font-semibold text-center">
+            <h2
+              data-aos="fade-up"
+              data-aos-delay={100}
+              className="text-2xl mb-3 sm:text-3xl font-poppins text-black font-semibold text-center"
+            >
               About Our Company
             </h2>
-            <p data-aos="fade-up" data-aos-delay={200} className="text-center text-gray-800 text-lg">
+            <p
+              data-aos="fade-up"
+              data-aos-delay={200}
+              className="text-center text-gray-800 text-lg"
+            >
               Each apartments has been individually designed to maximise space
               and light. Smart Home Technology installed as standard in each
               apartment putting you in total control of your home at the touch
@@ -57,7 +75,11 @@ const AboutUs = () => {
           </div>
           {/* faq started */}
           <div className="my-10 space-y-2">
-            <div data-aos="fade-up" data-aos-delay={100} className="collapse  collapse-plus bg-base-200">
+            <div
+              data-aos="fade-up"
+              data-aos-delay={100}
+              className="collapse  collapse-plus bg-base-200"
+            >
               <input type="radio" name="my-accordion-3" defaultChecked />
               <div className="collapse-title text-xl font-medium">
                 How long does it take to buy or sell a home?
@@ -66,7 +88,7 @@ const AboutUs = () => {
                 <p>
                   Several factors determine how long the process of buying or
                   selling real estate takes. The most important of these factors
-                  is the season in which you begin to        offer it for sale.
+                  is the season in which you begin to offer it for sale.
                 </p>
                 <br />
                 <p>
@@ -79,7 +101,11 @@ const AboutUs = () => {
                 </p>
               </div>
             </div>
-            <div data-aos="fade-up" data-aos-delay={100} className="collapse collapse-plus bg-base-200">
+            <div
+              data-aos="fade-up"
+              data-aos-delay={100}
+              className="collapse collapse-plus bg-base-200"
+            >
               <input type="radio" name="my-accordion-3" />
               <div className="collapse-title text-xl font-medium">
                 What kind of credit score do I need to buy a home?
@@ -96,7 +122,11 @@ const AboutUs = () => {
                 </p>
               </div>
             </div>
-            <div data-aos="fade-up" data-aos-delay={100} className="collapse collapse-plus bg-base-200">
+            <div
+              data-aos="fade-up"
+              data-aos-delay={100}
+              className="collapse collapse-plus bg-base-200"
+            >
               <input type="radio" name="my-accordion-3" />
               <div className="collapse-title text-xl font-medium">
                 How much do I need for a down payment?
@@ -125,7 +155,11 @@ const AboutUs = () => {
                 </p>
               </div>
             </div>
-            <div data-aos="fade-up" data-aos-delay={100}  className="collapse collapse-plus bg-base-200">
+            <div
+              data-aos="fade-up"
+              data-aos-delay={100}
+              className="collapse collapse-plus bg-base-200"
+            >
               <input type="radio" name="my-accordion-3" />
               <div className="collapse-title text-xl font-medium">
                 Should I sell my current home before buying a new one?
@@ -156,7 +190,11 @@ const AboutUs = () => {
                 </p>
               </div>
             </div>
-            <div data-aos="fade-up"  data-aos-delay={100} className="collapse collapse-plus bg-base-200">
+            <div
+              data-aos="fade-up"
+              data-aos-delay={100}
+              className="collapse collapse-plus bg-base-200"
+            >
               <input type="radio" name="my-accordion-3" />
               <div className="collapse-title text-xl font-medium">
                 How many homes should I view before buying one?
@@ -175,7 +213,11 @@ const AboutUs = () => {
             </div>
           </div>
           {/* faq ends */}
-          <div data-aos="fade-up" data-aos-delay={200} className="stats rounded-lg bg-card text-black shadow w-full">
+          <div
+            data-aos="fade-up"
+            data-aos-delay={200}
+            className="stats rounded-lg bg-card text-black shadow w-full"
+          >
             <div className="stat text-center">
               <div className="stat-title text-gray-700">Apartment Houses</div>
               <div className="stat-value">35</div>
@@ -192,10 +234,18 @@ const AboutUs = () => {
             </div>
           </div>
           <div className="my-10">
-            <h2 data-aos="fade-down" data-aos-delay={300} className="text-2xl mb-7 sm:text-3xl  font-poppins text-black font-semibold text-center">
+            <h2
+              data-aos="fade-down"
+              data-aos-delay={300}
+              className="text-2xl mb-7 sm:text-3xl  font-poppins text-black font-semibold text-center"
+            >
               What People Say
             </h2>
-            <div data-aos="fade-up" data-aos-delay={400} className="flex flex-col md:flex-row mx-auto gap-3">
+            <div
+              data-aos="fade-up"
+              data-aos-delay={400}
+              className="flex flex-col md:flex-row mx-auto gap-3"
+            >
               <div className="max-w-md mx-auto p-6 overflow-hidden rounded-lg shadow bg-card text-black">
                 <article>
                   <h2 className="text-center text-5xl">"</h2>
@@ -258,10 +308,18 @@ const AboutUs = () => {
               </div>
             </div>
           </div>
-          <section data-aos="fade-up" data-aos-delay={300} className="py-6 rounded-lg bg-card my-10 text-black">
+          <section
+            data-aos="fade-up"
+            data-aos-delay={300}
+            className="py-6 rounded-lg bg-card my-10 text-black"
+          >
             <div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
-              <div data-aos="fade-up" data-aos-delay={400} className="py-6 md:py-0 md:px-6">
-                <h1   className="text-4xl font-bold">Get in touch</h1>
+              <div
+                data-aos="fade-up"
+                data-aos-delay={400}
+                className="py-6 md:py-0 md:px-6"
+              >
+                <h1 className="text-4xl font-bold">Get in touch</h1>
                 <p className="pt-2 pb-4">
                   Fill in the form to start a conversation
                 </p>
@@ -307,8 +365,9 @@ const AboutUs = () => {
                 </div>
               </div>
               <form
-              onSubmit={handleSubmit}
-                data-aos="fade-up" data-aos-delay={500}
+                onSubmit={handleSubmit}
+                data-aos="fade-up"
+                data-aos-delay={500}
                 className="flex flex-col py-6 space-y-6 md:py-0 md:px-6"
               >
                 <label className="block">
@@ -344,12 +403,32 @@ const AboutUs = () => {
                 <input
                   type="submit"
                   value={"Send"}
-                
                   className="self-center px-8 py-3 text-lg rounded font-poppins font-bold text-white hover:cursor-pointer  bg-violet-500"
                 />
               </form>
             </div>
           </section>
+          <div
+            data-aos="fade-up"
+            data-aos-delay="200"
+            className="w-full my-10 mb-28 mx-auto h-[400px] lg:h-[500px] "
+          >
+            <h2 className="text-2xl mb-7 sm:text-3xl  font-poppins text-black font-semibold">Our Location:</h2>
+            <MapContainer
+              center={[24.382001, 88.602329]}
+              zoom={13}
+              scrollWheelZoom={false}
+              style={{ height: "100%", width: "100%" }}
+            >
+              <TileLayer
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              />
+              <Marker position={[24.382001, 88.602329]}>
+                <Popup>Nova Estate</Popup>
+              </Marker>
+            </MapContainer>
+          </div>
         </div>
       </div>
     </div>
