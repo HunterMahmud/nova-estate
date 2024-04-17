@@ -6,6 +6,7 @@ import { updateProfile } from "firebase/auth";
 import auth from "./../Firebase/firebase.config";
 import { toast } from "react-toastify";
 import { useEffect } from "react";
+import { ScrollRestoration } from 'react-router-dom';
 
 const UpdateProfile = () => {
   const { user } = contextProvider();
@@ -61,20 +62,21 @@ const UpdateProfile = () => {
       <Helmet>
         <title>Update Profile | Nova Estate</title>
       </Helmet>
+      <ScrollRestoration/>
       <div className="max-w-7xl mx-auto">
-        <div className="bg-main rounded-md lg:col-span-1 flex flex-col items-center justify-center  my-10  p-8 text-black">
-          <img
+        <div data-aos="fade-down" className="bg-main rounded-md lg:col-span-1 flex flex-col items-center justify-center  my-10  p-8 text-black">
+          <img 
             src={photoURL}
             alt={displayName}
             className="object-center w-40 h-40 mb-6 border border-solid border-blue-300 rounded-full"
           />
           <div className="flex flex-col items-center justify-center space-y-4">
-            <div>
+            <div data-aos="fade-down" data-aos-delay={100}>
               <h2 className="text-2xl font-semibold">
                 {displayName || "Name Not Set"}
               </h2>
             </div>
-            <div className="space-y-1">
+            <div data-aos="fade-down" data-aos-delay={200} className="space-y-1">
               <span className="flex items-center space-x-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -95,7 +97,7 @@ const UpdateProfile = () => {
           </div>
         </div>
         <div>
-          <section className="p-6 my-10 lg:col-span-3 rounded-md text-black bg-gray-200">
+          <section data-aos="fade-down" data-aos-delay={300} className="p-6 my-10 lg:col-span-3 rounded-md text-black bg-card">
             <form
               onSubmit={handleSubmit(onSubmitEdit)}
               className="container flex flex-col mx-auto "
@@ -104,8 +106,8 @@ const UpdateProfile = () => {
                 <div className="space-y-2 col-span-full lg:col-span-1">
                   <p className="font-medium">Personal Inormation</p>
                 </div>
-                <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
-                  <div className="col-span-full sm:col-span-3">
+                <div  className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
+                  <div data-aos="fade-down" data-aos-delay={400} className="col-span-full sm:col-span-3">
                     <label htmlFor="name" className="text-sm">
                       Name
                     </label>
@@ -118,7 +120,7 @@ const UpdateProfile = () => {
                       className="w-full rounded-md p-2 focus:ring focus:ring-opacity-75 text-black bg-gray-200 border-2 border-gray-400"
                     />
                   </div>
-                  <div className="col-span-full sm:col-span-3">
+                  <div data-aos="fade-down" data-aos-delay={500} className="col-span-full sm:col-span-3">
                     <label htmlFor="email" className="text-sm">
                       Email
                     </label>
@@ -132,7 +134,7 @@ const UpdateProfile = () => {
                     />
                   </div>
 
-                  <div className="col-span-full">
+                  <div data-aos="fade-down" data-aos-delay={600} className="col-span-full">
                     <label htmlFor="address" className="text-sm">
                       Photo URL
                     </label>
@@ -147,7 +149,7 @@ const UpdateProfile = () => {
                   </div>
                 </div>
               </fieldset>
-              <div className="flex justify-end py-4">
+              <div  className="flex justify-end py-4">
                 <button
                   disabled={!isDirty}
                   

@@ -191,7 +191,7 @@ const EstateDetails = () => {
               <div>
                 <h3
                   data-aos="fade-up"
-                  data-aos-duration="500"
+                  data-aos-delay="200"
                   className="text-2xl text-black font-bold  mt-10 uppercase font-poppins"
                 >
                   Descriptions
@@ -199,7 +199,7 @@ const EstateDetails = () => {
                 {details_paras.map((para, i) => (
                   <p
                     data-aos="fade-up"
-                    data-aos-duration="200"
+                    data-aos-delay="200"
                     className="py-2 font-poppins text-gray-800"
                     key={i}
                   >
@@ -207,14 +207,14 @@ const EstateDetails = () => {
                   </p>
                 ))}
               </div>
-              <div data-aos="fade-up" data-aos-duration="200">
+              <div data-aos="fade-up" data-aos-delay="200">
                 <h3 className="text-2xl text-gray-700 font-bold mt-10 uppercase font-poppins mb-5">
                   Location : <span className="capitalize">{location}</span>
                 </h3>
 
                 <div
                   data-aos="fade-up"
-                  data-aos-duration="200"
+                  data-aos-delay="200"
                   className="w-full max-w-5xl h-[400px] lg:h-[500px] "
                 >
                   <MapContainer

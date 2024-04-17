@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import contextProvider from "./../components/contextProvider";
+import { ScrollRestoration } from 'react-router-dom';
 
 const FavoritesProperties = () => {
   const [favorites, setFavorites] = useState([]);
@@ -48,14 +49,14 @@ const FavoritesProperties = () => {
       <Helmet>
         <title>Wishlist | Nova Estate</title>
       </Helmet>
-
+      <ScrollRestoration/>
       {favorites.length == 0 ? (
         <div className="w-full min-h-[calc(100vh-349px)] flex items-center justify-center">
           <h1 className="text-3xl text-gray-800">No Data in Wishlist</h1>
         </div>
       ) : (
         <>
-          <h1 className="text-xl md:text-3xl lg:text-5xl font-bold font-poppins text-center my-14  text-gray-900">
+          <h1 data-aos="fade-down" className="text-xl md:text-3xl lg:text-5xl font-bold font-poppins text-center my-14  text-gray-900">
             Wishlist Properties
           </h1>
           <div className="my-8 grid grid-cols-1 max-w-7xl mx-auto md:grid-cols-2 lg:grid-cols-3 gap-5">
