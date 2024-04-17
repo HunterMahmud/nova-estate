@@ -51,7 +51,7 @@ const FavoritesProperties = () => {
       </Helmet>
       <ScrollRestoration/>
       {favorites.length == 0 ? (
-        <div className="w-full min-h-[calc(100vh-349px)] flex items-center justify-center">
+        <div className="w-full min-h-[calc(100vh-325px)] flex items-center justify-center">
           <h1 className="text-3xl text-gray-800">No Data in Wishlist</h1>
         </div>
       ) : (
