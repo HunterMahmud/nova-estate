@@ -343,7 +343,7 @@ const AboutUs = () => {
                 </label>
                 <input
                   type="submit"
-                  value={"Submit"}
+                  value={"Send"}
                 
                   className="self-center px-8 py-3 text-lg rounded font-poppins font-bold text-white hover:cursor-pointer  bg-violet-500"
                 />
