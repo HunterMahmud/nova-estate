@@ -419,7 +419,7 @@ const AboutUs = () => {
             data-aos-delay="200"
             className="w-full my-10 mb-28 mx-auto h-[400px] lg:h-[500px] "
           >
-            <h2 className="text-2xl mb-7 sm:text-3xl  font-poppins text-black font-semibold">Our Location:</h2>
+            <h2 className="text-2xl mb-7 sm:text-3xl  font-poppins text-black font-semibold">Our Location: 6000 Rajshahi, BD</h2>
             <MapContainer
               center={[24.382001, 88.602329]}
               zoom={13}
@@ -431,7 +431,7 @@ const AboutUs = () => {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
               <Marker icon={ICON} position={[24.382001, 88.602329]}>
-                <Popup>Nova Estate</Popup>
+                <Popup>Nova Estate, Rajshahi</Popup>
               </Marker>
             </MapContainer>
           </div>
