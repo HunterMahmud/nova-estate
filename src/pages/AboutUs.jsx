@@ -1,11 +1,33 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import { ScrollRestoration } from "react-router-dom";
+import { collection, addDoc } from "firebase/firestore";
+import { toast } from "react-toastify";
+
+import { db } from "./../Firebase/firebase.config";
+
+
 
 const AboutUs = () => {
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    console.log("hello");
+    const email = e.target.email.value;
+    const name = e.target.name.value;
+    const message = e.target.message.value;
+    // console.log(email, name , message);
+    try {
+      const docRef = await addDoc(collection(db, 'contacts'), {
+        email,
+        name,
+        message
+      });
+  
+      // console.log('Document written with ID: ', docRef.id);
+      toast.success('Data saved to firebase.');
+      e.target.reset();
+    } catch (error) {
+      toast.error("Error occured!");
+    }
   };
   return (
     <div>
@@ -44,8 +66,7 @@ const AboutUs = () => {
                 <p>
                   Several factors determine how long the process of buying or
                   selling real estate takes. The most important of these factors
-                  is the season in which you begin to search for a property or
-                  offer it for sale.
+                  is the season in which you begin to        offer it for sale.
                 </p>
                 <br />
                 <p>
@@ -286,6 +307,7 @@ const AboutUs = () => {
                 </div>
               </div>
               <form
+              onSubmit={handleSubmit}
                 data-aos="fade-up" data-aos-delay={500}
                 className="flex flex-col py-6 space-y-6 md:py-0 md:px-6"
               >
@@ -293,6 +315,7 @@ const AboutUs = () => {
                   <span className="mb-1">Name</span>
                   <input
                     type="text"
+                    name="name"
                     required={true}
                     placeholder="Bill Gates"
                     className="block w-full p-2 placeholder:text-gray-600 rounded-md shadow-sm  bg-gray-100 border border-gray-600 "
@@ -302,6 +325,7 @@ const AboutUs = () => {
                   <span className="mb-1">Email</span>
                   <input
                     type="email"
+                    name="email"
                     required={true}
                     placeholder="bill@gates.com"
                     className="block w-full p-2 placeholder:text-gray-600 rounded-md shadow-sm  bg-gray-100 border border-gray-600 "
@@ -312,6 +336,7 @@ const AboutUs = () => {
                   <textarea
                     required={true}
                     rows="3"
+                    name="message"
                     placeholder="Your message"
                     className="block w-full p-2 placeholder:text-gray-600 rounded-md shadow-sm  bg-gray-100 border border-gray-600 "
                   ></textarea>
@@ -319,7 +344,7 @@ const AboutUs = () => {
                 <input
                   type="submit"
                   value={"Submit"}
-                  onClick={handleSubmit}
+                
                   className="self-center px-8 py-3 text-lg rounded font-poppins font-bold text-white hover:cursor-pointer  bg-violet-500"
                 />
               </form>

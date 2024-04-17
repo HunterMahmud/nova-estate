@@ -16,7 +16,7 @@ const Footer = () => {
                 alt="Nova Estate"
               />
             </div>
-            <span className="self-center text-2xl font-semibold">
+            <span className="self-center font-bugrasimo text-2xl font-semibold">
               Nova Estate
             </span>
           </Link>
@@ -38,9 +38,9 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a rel="noopener noreferrer" href="#">
+                <Link to='/aboutus'>
                   FAQ
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
