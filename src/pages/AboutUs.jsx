@@ -6,9 +6,15 @@ import { toast } from "react-toastify";
 
 import { TileLayer, MapContainer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+// import 'leaflet/0.7.7/leaflet.css';
 
 import { db } from "./../Firebase/firebase.config";
+import {  icon } from "leaflet"
 
+const ICON = icon({
+  iconUrl: "https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon-2x.png",
+  iconSize: [20, 32],
+})
 const AboutUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -424,7 +430,7 @@ const AboutUs = () => {
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
-              <Marker position={[24.382001, 88.602329]}>
+              <Marker icon={ICON} position={[24.382001, 88.602329]}>
                 <Popup>Nova Estate</Popup>
               </Marker>
             </MapContainer>
