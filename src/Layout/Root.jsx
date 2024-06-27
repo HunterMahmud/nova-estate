@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 
 const Root = () => {
     return (
-        <div className='bg-white object-cover bg-cover bg-[linear-gradient(45deg,rgba(3,7,18,0.1),rgba(3,7,18,0)),url("https://source.unsplash.com/white-concrete-wall-2_BZuGgkP4k")] bg-center bg-no-repeat bg-fixed'>
+        <div className='bg-white object-cover bg-cover bg-[linear-gradient(45deg,rgba(3,7,18,0.1),rgba(3,7,18,0)),url("https://i.ibb.co/6W7XHnN/background.jpg")] bg-center bg-no-repeat bg-fixed'>
             <Navbar/>
            <div className="min-h-[calc(100vh-349px)]">
            <Outlet/>

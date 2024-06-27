@@ -12,12 +12,12 @@ import "leaflet/dist/leaflet.css";
 import { db } from "./../Firebase/firebase.config";
 import { toast } from "react-toastify";
 import contextProvider from "./../components/contextProvider";
-import {  icon } from "leaflet"
+import { icon } from "leaflet";
 
 const ICON = icon({
   iconUrl: "https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon-2x.png",
   iconSize: [20, 32],
-})
+});
 
 const EstateDetails = () => {
   const { id: pId } = useParams();
@@ -93,11 +93,20 @@ const EstateDetails = () => {
       </Helmet>
 
       <ScrollRestoration />
-      <div className="flex flex-col items-center justify-center h-[150px] sm:h-[300px] object-cover bg-cover bg-[linear-gradient(45deg,rgba(0,0,0,0.5),rgba(0,0,0,0)),url('https://source.unsplash.com/a-living-room-filled-with-furniture-and-a-large-window-TBJrxAvVx_M')] bg-center bg-no-repeat">
-        <h2 data-aos="fade-down" className="text-2xl sm:text-3xl lg:text-5xl font-poppins text-white">
+      <div className="flex flex-col items-center justify-center h-[150px] sm:h-[300px] object-cover bg-cover bg-[linear-gradient(45deg,rgba(0,0,0,0.5),rgba(0,0,0,0)),url('https://i.ibb.co/23B68Jw/details.jpg')] bg-center bg-no-repeat">
+        <h2
+          data-aos="fade-down"
+          className="text-2xl sm:text-3xl lg:text-5xl font-poppins text-white"
+        >
           {estate_title}
         </h2>
-        <p data-aos="fade-up" data-aos-delay={100} className="text-sm mt-2 text-center text-white">Details Page</p>
+        <p
+          data-aos="fade-up"
+          data-aos-delay={100}
+          className="text-sm mt-2 text-center text-white"
+        >
+          Details Page
+        </p>
       </div>
 
       <div className="mx-3 mb-40">

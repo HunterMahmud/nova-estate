@@ -42,8 +42,11 @@ const AboutUs = () => {
         <title>About Us | Nova Estate</title>
       </Helmet>
 
+
+
+
       <ScrollRestoration />
-      <div className=" flex flex-col items-center justify-center h-[300px]  object-cover bg-cover bg-[linear-gradient(45deg,rgba(0,0,0,0.5),rgba(0,0,0,0)),url('https://source.unsplash.com/a-living-room-filled-with-furniture-and-a-large-window-TBJrxAvVx_M')] bg-center bg-no-repeat">
+      <div className=" flex flex-col items-center justify-center h-[300px]  object-cover bg-cover bg-[linear-gradient(45deg,rgba(0,0,0,0.5),rgba(0,0,0,0)),url('https://i.ibb.co/qgXf4PL/about1.jpg')] bg-center bg-no-repeat">
         <h2
           data-aos="fade-down"
           className="text-2xl sm:text-4xl lg:text-5xl font-poppins text-white"
@@ -261,7 +264,7 @@ const AboutUs = () => {
                   </p>
                   <div className="flex items-center mt-8 space-x-4">
                     <img
-                      src="https://source.unsplash.com/man-wearing-green-polo-shirt-6anudmpILw4"
+                      src="https://i.ibb.co/F4tYV3v/about2.jpg"
                       alt=""
                       className="w-10 h-10 rounded-full bg-card"
                     />
@@ -281,7 +284,7 @@ const AboutUs = () => {
                   </p>
                   <div className="flex items-center mt-8 space-x-4">
                     <img
-                      src="https://source.unsplash.com/man-wearing-black-and-white-top-7omHUGhhmZ0"
+                      src="https://i.ibb.co/fXjycnb/about3.jpg"
                       alt=""
                       className="w-10 h-10 rounded-full bg-card"
                     />
@@ -301,7 +304,7 @@ const AboutUs = () => {
                   </p>
                   <div className="flex items-center mt-8 space-x-4">
                     <img
-                      src="https://source.unsplash.com/a-man-in-a-yellow-shirt-smiling-at-the-camera-ZjDbRtR_BcE"
+                      src="https://i.ibb.co/4ZCCJMn/about4.jpg"
                       alt=""
                       className="w-10 h-10 rounded-full bg-card"
                     />
